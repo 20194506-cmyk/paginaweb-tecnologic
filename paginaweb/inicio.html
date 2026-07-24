@@ -3,12 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Technologic Store</title>
-
     <link rel="stylesheet" href="css/style.css" />
   </head>
-
   <body>
     <header>
       <div class="logo">
@@ -16,19 +13,15 @@
         <h1>TECHNOLOGIC STORE</h1>
       </div>
 
-      <form class="buscador" role="search">
-        <input
-          type="search"
-          placeholder="Celulares"
-          aria-label="Buscar productos"
-        />
+      <form class="buscador">
+        <input type="search" placeholder="Celulares" />
         <button type="submit">
           <img src="img/lupa.png" alt="Buscar" />
         </button>
       </form>
 
       <div class="carrito">
-        <a href="compras.html" aria-label="Ver carrito de compras">
+        <a href="compras.html">
           <img src="img/carrito.png" alt="Carrito" />
         </a>
       </div>
@@ -46,8 +39,10 @@
 
     <main>
       <section class="banner">
-        <article class="contenido-banner">
-          <h2>La Revolución Tecnológica de 2026. Actualiza tu Setup Diario</h2>
+        <div class="texto-banner">
+          <h2>
+            La Revolución Tecnológica de 2026.<br />Actualiza tu Setup Diario
+          </h2>
           <p>
             Descubre las últimas innovaciones tecnológicas que están
             redefiniendo el año 2026. Desde inteligencia artificial avanzada
@@ -55,32 +50,36 @@
             productividad y entretenimiento al siguiente nivel. Tu setup ideal
             te espera.
           </p>
-        </article>
+        </div>
+
+        <div class="imagen-banner">
+          <img src="img/banner.png" alt="Banner" />
+        </div>
       </section>
 
       <section class="categorias">
         <article class="categoria">
           <h2>CELULARES</h2>
-          <figure>
-            <img src="img/celular.png" alt="Categoría Celulares" />
-          </figure>
-          <a href="celular.html">ENTRAR</a>
+          <div class="contenedor-imagen">
+            <img src="img/celular.png" alt="Celulares" />
+          </div>
+          <a href="celular.html" class="btn-categoria">ENTRAR</a>
         </article>
 
         <article class="categoria">
           <h2>LAPTOPS</h2>
-          <figure>
-            <img src="img/laptop.png" alt="Categoría Laptops" />
-          </figure>
-          <a href="computadora.html">ENTRAR</a>
+          <div class="contenedor-imagen">
+            <img src="img/laptop.png" alt="Laptops" />
+          </div>
+          <a href="computadora.html" class="btn-categoria">ENTRAR</a>
         </article>
 
         <article class="categoria">
           <h2>AURICULARES</h2>
-          <figure>
-            <img src="img/audifono.png" alt="Categoría Auriculares" />
-          </figure>
-          <a href="audifono.html">ENTRAR</a>
+          <div class="contenedor-imagen">
+            <img src="img/audifono.png" alt="Auriculares" />
+          </div>
+          <a href="audifono.html" class="btn-categoria">ENTRAR</a>
         </article>
       </section>
 
@@ -89,68 +88,68 @@
 
         <div class="grid-ofertas">
           <article class="tarjeta-oferta">
-            <mark class="descuento">15%</mark>
+            <span class="descuento">15%</span>
             <div class="info-producto">
               <h3>Acer Nitro V</h3>
               <ul>
                 <li>Intel Core i5</li>
                 <li>NVIDIA RTX 4050</li>
-                <li>16 GB / 512 GB</li>
-                <li>15.6 pulgadas a 144Hz</li>
-                <li>Rendimiento de gama alta</li>
+                <li>16 GB RAM</li>
+                <li>512 GB SSD</li>
+                <li>Pantalla 15.6" 144Hz</li>
               </ul>
             </div>
-            <figure class="imagen-producto">
-              <img src="img/acer-nitro.png" alt="Laptop Acer Nitro V" />
-            </figure>
+            <div class="imagen-producto">
+              <img src="img/acer-nitro.png" alt="Acer Nitro" />
+            </div>
           </article>
 
           <article class="tarjeta-oferta">
-            <mark class="descuento">40%</mark>
+            <span class="descuento">40%</span>
             <div class="info-producto">
               <h3>iPhone 13 Pro</h3>
               <ul>
                 <li>Chip A15 Bionic</li>
-                <li>Cámara triple (12 MP)</li>
-                <li>128 GB / 256 GB / 512 GB / 1 TB</li>
-                <li>Hasta 22 horas de video</li>
+                <li>Cámara Triple</li>
+                <li>128GB / 256GB</li>
+                <li>Pantalla Super Retina</li>
               </ul>
             </div>
-            <figure class="imagen-producto">
+            <div class="imagen-producto">
               <img src="img/iphone13pro.png" alt="iPhone 13 Pro" />
-            </figure>
+            </div>
           </article>
 
           <article class="tarjeta-oferta">
-            <mark class="descuento">50%</mark>
+            <span class="descuento">50%</span>
             <div class="info-producto">
               <h3>iPhone 14 Plus</h3>
               <ul>
-                <li>Chip A15 Bionic.</li>
-                <li>Cámara doble (12 MP).</li>
-                <li>128 GB / 256 GB / 512 GB.</li>
-                <li>Hasta 20/26 horas de video.</li>
+                <li>Chip A15 Bionic</li>
+                <li>Cámara Dual</li>
+                <li>128GB / 256GB</li>
+                <li>Batería de larga duración</li>
               </ul>
             </div>
-            <figure class="imagen-producto">
+            <div class="imagen-producto">
               <img src="img/iphone14plus.png" alt="iPhone 14 Plus" />
-            </figure>
+            </div>
           </article>
 
           <article class="tarjeta-oferta">
-            <mark class="descuento">30%</mark>
+            <span class="descuento">30%</span>
             <div class="info-producto">
               <h3>Audífonos RGB</h3>
               <ul>
-                <li>Sonido envolvente HD</li>
+                <li>Sonido HD</li>
                 <li>Iluminación RGB</li>
                 <li>Micrófono integrado</li>
-                <li>Almohadillas muy cómodas</li>
+                <li>Almohadillas cómodas</li>
               </ul>
             </div>
-            <figure class="imagen-producto">
-              <img src="img/audifonos-rgb.png" alt="Audífonos RGB" />
-            </figure>
+            <div class="imagen-producto">
+              <img src="img/audifonos-rgb.png" alt="Audífonos" />
+            </div>
           </article>
         </div>
 
@@ -161,61 +160,46 @@
     </main>
 
     <footer>
-      <section class="columna-footer copyright">
-        <p>
-          <small
-            >© 2026 Technologic store. Todos los derechos reservados.</small
-          >
-        </p>
-      </section>
+      <div class="copyright">
+        <p>&copy; 2026 Technologic Store. Todos los derechos reservados.</p>
+      </div>
 
-      <nav
-        class="columna-footer politicas"
-        aria-label="Navegación de políticas"
-      >
+      <div class="politicas">
         <h3>Políticas</h3>
         <ul>
           <li><a href="#">Términos y condiciones</a></li>
           <li><a href="#">Políticas generales</a></li>
-          <li><a href="#">Devolución y cambios</a></li>
+          <li><a href="#">Devoluciones y cambios</a></li>
           <li><a href="#">Política de privacidad</a></li>
-          <li><a href="#">Términos y condiciones de promociones</a></li>
+          <li><a href="#">Promociones</a></li>
         </ul>
-      </nav>
+      </div>
 
-      <nav
-        class="columna-footer servicio-cliente"
-        aria-label="Servicio al cliente"
-      >
-        <h3>Servicio al cliente</h3>
+      <div class="servicio">
+        <h3>Servicio al Cliente</h3>
         <ul>
-          <li><a href="#">Preguntas</a></li>
+          <li><a href="#">Preguntas frecuentes</a></li>
           <li><a href="#">Devoluciones</a></li>
+          <li><a href="#">Garantías</a></li>
+          <li><a href="#">Soporte técnico</a></li>
         </ul>
-      </nav>
+      </div>
 
-      <address class="columna-footer contacto">
-        <h3>Teléfono de contacto:</h3>
-        <a href="tel:+50372855317">+503 7285 5317</a>
-      </address>
+      <div class="contacto">
+        <h3>Contacto</h3>
+        <p>+503 7285-5317</p>
+        <p>technologicstore@gmail.com</p>
+      </div>
 
-      <section class="columna-footer redes-sociales">
+      <div class="redes">
         <h3>Síguenos</h3>
-        <div class="iconos-redes">
-          <a href="#" target="_blank" aria-label="TikTok">
-            <img src="img/tiktok.png" alt="TikTok" />
-          </a>
-          <a href="#" target="_blank" aria-label="Facebook">
-            <img src="img/facebook.png" alt="Facebook" />
-          </a>
-          <a href="#" target="_blank" aria-label="Instagram">
-            <img src="img/instagram.png" alt="Instagram" />
-          </a>
-          <a href="#" target="_blank" aria-label="X">
-            <img src="img/x.png" alt="X" />
-          </a>
+        <div class="iconos">
+          <a href="#"><img src="img/facebook.png" alt="Facebook" /></a>
+          <a href="#"><img src="img/instagram.png" alt="Instagram" /></a>
+          <a href="#"><img src="img/tiktok.png" alt="TikTok" /></a>
+          <a href="#"><img src="img/x.png" alt="X" /></a>
         </div>
-      </section>
+      </div>
     </footer>
   </body>
 </html>
