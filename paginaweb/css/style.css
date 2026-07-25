@@ -4,13 +4,22 @@
 
 .ofertas {
   width: 100%;
-  padding: 40px;
+  padding: 50px 40px 70px;
+  background: linear-gradient(
+    to bottom,
+    #e2eaf2 0%,
+    #c9def5 25%,
+    #9fbfe4 60%,
+    #5585ba 100%
+  );
 }
 
 .ofertas h2 {
   text-align: center;
-  font-size: 42px;
-  margin-bottom: 40px;
+  font-size: 46px;
+  margin-bottom: 55px;
+  font-family: Georgia, serif;
+  font-weight: bold;
 }
 
 .grid-ofertas {
@@ -103,8 +112,8 @@
 
 footer {
   margin-top: 50px;
-  background: #cfe7f6;
-  border-top: 2px solid #8aa8bb;
+  background: #fff;
+  border-top: 2px solid #fff;
   display: grid;
   grid-template-columns: 1.3fr 1fr 1fr 1fr 1fr;
   gap: 25px;
@@ -178,8 +187,32 @@ footer small {
   }
 
   .categorias {
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px 60px 40px;
+    background: linear-gradient(
+      to bottom,
+      #dcecff 0%,
+      #c9def5 20%,
+      #a9c8e8 45%,
+      #7ea8d4 75%,
+      #5585ba 100%
+    );
+  }
+
+  .ofertas {
+    width: 100%;
+    padding: 40px 40px 70px;
+    background: linear-gradient(
+      to bottom,
+      #dcecff 0%,
+      #c9def5 20%,
+      #a9c8e8 45%,
+      #7ea8d4 75%,
+      #5585ba 100%
+    );
   }
 
   .grid-ofertas {
@@ -231,11 +264,10 @@ ul {
                 HEADER
 =========================================*/
 
-
 header {
   width: 100%;
   height: 90px;
-  background: #b8d8eb;
+  background: #7fa9be;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -266,8 +298,6 @@ header {
   border-radius: 30px;
   overflow: hidden;
   border: 2px solid #b8b8b8;
-  margin-left: auto;
-  margin-right: 20px; 
 }
 
 .buscador input {
@@ -301,7 +331,7 @@ header {
 nav {
   width: 100%;
   height: 55px;
-  background: #E2E6EA;
+  background: #ffffff;
   border-bottom: 2px solid #9eb5c4;
 }
 
@@ -337,11 +367,11 @@ nav ul li a:hover {
 }
 
 .texto-banner {
-  width: 60%;
+  width: 55%;
 }
 
 .texto-banner h2 {
-  font-size: 30px;
+  font-size: 50px;
   line-height: 1.2;
   margin-bottom: 25px;
 }
@@ -370,13 +400,20 @@ nav ul li a:hover {
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 60px;
-  padding: 20px 60px 60px;
+  gap: 40px;
+  padding: 30px 60px 70px;
+  background: linear-gradient(
+    to bottom,
+    #e2eaf2 0%,
+    #d4e2ef 30%,
+    #b2cbe0 70%,
+    #7fa9be 100%
+  );
 }
 
 .categoria {
   width: 320px;
-  background: #F7FAFF;
+  background: #ffffff;
   border: 2px solid #707070;
   border-radius: 20px;
   padding: 20px;
@@ -401,8 +438,8 @@ nav ul li a:hover {
 }
 
 .contenedor-imagen img {
-  width: 300px;
-  height: 275px;
+  width: 190px;
+  height: 190px;
   object-fit: contain;
 }
 
@@ -431,7 +468,7 @@ nav ul li a:hover {
 
 .ofertas {
   width: 100%;
-  padding: 20px 60px 60px;
+  background-color: #5585ba;
 }
 
 .ofertas h2 {
@@ -448,7 +485,7 @@ nav ul li a:hover {
 }
 
 .tarjeta-oferta {
-  background: #F7FAFF;
+  background: #fff;
   border: 2px solid #707070;
   border-radius: 18px;
   display: flex;
@@ -461,17 +498,14 @@ nav ul li a:hover {
 
 .descuento {
   position: absolute;
-  top: 18px;
-  right: 1;                           
-  background: #ff0000;
+  top: 15px;
+  right: 15px;
+  background: #ff2d2d;
   color: #fff;
-  font-weight: 700;
-  font-size: 16px;
-  padding: 5px 18px 5px 12px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-
-  clip-path: polygon(0 0, 100% 0, 85% 50%, 100% 100%, 0 100%);
+  font-size: 18px;
+  font-weight: bold;
+  padding: 6px 14px;
+  border-radius: 25px;
 }
 
 .info-producto {
@@ -494,7 +528,7 @@ nav ul li a:hover {
 }
 
 .imagen-producto {
-  width: 70%;
+  width: 38%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -502,7 +536,7 @@ nav ul li a:hover {
 
 .imagen-producto img {
   max-width: 100%;
-  max-height: 290px;
+  max-height: 180px;
   object-fit: contain;
 }
 
@@ -537,43 +571,213 @@ nav ul li a:hover {
 
 footer {
   width: 100%;
-  background: #b8d8eb;
-  padding: 40px 60px 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
+  background: #cfe5f3;
   border-top: 2px solid #8ea9ba;
+  display: grid;
+  grid-template-columns: 1.2fr 1.4fr 1.2fr 1fr 1fr;
+  gap: 35px;
+  padding: 35px 45px;
 }
 
 footer h3 {
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: 700;
   margin-bottom: 15px;
 }
 
-footer ul li {
+footer p,
+footer li,
+footer a {
+  font-size: 17px;
+  color: #000;
+  line-height: 1.6;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer li {
+  margin-bottom: 6px;
+}
+
+footer a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+footer a:hover {
+  color: #1878d8;
+}
+
+.copyright p {
+  margin-top: 10px;
+}
+
+.contacto p {
+  font-weight: 600;
   margin-bottom: 8px;
 }
 
-footer ul li a:hover {
-  color: #776426;
+.iconos {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
 }
 
-.redes .iconos {
+.iconos img {
+  width: 38px;
+  height: 38px;
+  transition: 0.3s;
+}
+
+.iconos img:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 1000px) {
+  footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .iconos {
+    justify-content: center;
+  }
+}
+.catalogo-productos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  gap: 20px;
+  background-color: #a8c4e0; /* Color de fondo similar */
+  padding: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*=========================================
+                CONTACTANOS
+=========================================*/
+
+/* Contenedor principal del formulario */
+.form-contacto-container {
+  width: 100%;
+  max-width: 1150px;
+  margin: 40px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.form-contacto-body {
   display: flex;
+  flex-direction: column;
   gap: 15px;
 }
 
-.redes .iconos img {
-  width: 30px;
-  height: 30px;
+/* Banners / Encabezados azules - CON SOMBREADO */
+.form-contacto-banner {
+  background: linear-gradient(180deg, #6090c2 0%, #527dae 100%);
+  border-radius: 50px;
+  padding: 12px 20px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  /* El efecto de sombreado: sombra exterior suave y sombra interior */
+  box-shadow: 
+    0 4px 6px rgba(199, 176, 176, 0.3), /* Sombra exterior */
+    inset 0 -3px 0 rgba(250, 250, 250, 0.2), /* Sombra interior inferior */
+    inset 0 1px 1px rgba(228, 177, 177, 0.3); /* Brillo interior superior */
 }
 
-.copyright {
+.form-contacto-banner h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #000;
+}
+
+/* Contenedores de cada Input */
+.form-contacto-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-contacto-group label {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #000;
+  margin-left: 8px;
+}
+
+/* Campos de entrada */
+.form-contacto-group input,
+.form-contacto-group textarea {
   width: 100%;
-  text-align: center;
-  margin-top: 20px;
-  padding-top: 15px;
-  border-top: 1px solid #0e0a0c;
-  font-size: 14px;
+  background-color: #ebebeb;
+  border: 1px solid #333333;
+  padding: 12px 20px;
+  font-size: 1rem;
+  color: #222222;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.form-contacto-group input {
+  border-radius: 25px;
+}
+
+.form-contacto-group textarea {
+  border-radius: 20px;
+  resize: vertical;
+}
+
+/* Textos informativos (Placeholders) */
+.form-contacto-group input::placeholder,
+.form-contacto-group textarea::placeholder {
+  color: #a0a0a0;
+}
+
+/* Botón Enviar - CON SOMBREADO */
+.form-contacto-submit {
+  background: linear-gradient(180deg, #6090c2 0%, #527dae 100%);
+  color: #000;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  /* Mismo efecto de sombreado */
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.3), 
+    inset 0 -3px 0 rgba(0, 0, 0, 0.2), 
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-contacto-submit:hover {
+  transform: scale(1.02);
+  opacity: 0.95;
+}
+
+/* Efecto al presionar el botón */
+.form-contacto-submit:active {
+  transform: scale(0.98);
+  box-shadow: 
+    0 2px 3px rgba(0, 0, 0, 0.3), 
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2), 
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
 }
