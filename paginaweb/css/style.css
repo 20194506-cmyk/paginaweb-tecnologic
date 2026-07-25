@@ -781,3 +781,292 @@ footer a:hover {
     inset 0 -1px 0 rgba(0, 0, 0, 0.2), 
     inset 0 1px 1px rgba(255, 255, 255, 0.3);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*=========================================
+        CATÁLOGO EXACTO A LA IMAGEN
+=========================================*/
+
+/* Contenedor principal Grid de 3 columnas */
+main.catalogo-main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  
+  padding: 35px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Tarjeta contenedora blanca/gris con bordes redondeados */
+.tarjeta-prod {
+  background-color: #F5F9FF;
+  border: 2px solid #222222;
+  border-radius: 20px;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Imagen centrada */
+.imagen-prod {
+  width: 100%;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.imagen-prod img {
+  max-width: 100%;
+  max-height: 110%;
+  object-fit: contain;
+}
+
+/* Título en negrita */
+.titulo-prod {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+/* Lista con puntos negros */
+.specs-prod {
+  list-style: disc;
+  margin-left: 18px;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.specs-prod li {
+  font-size: 0.82rem;
+  font-weight: 500;
+  margin-bottom: 3px;
+  line-height: 1.25;
+}
+
+/* Precio en negrita */
+.precio-prod {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 12px;
+}
+
+/* Botón estilo pill azul con sombreado y relieve */
+.btn-carrito {
+  width: 100%;
+  background: #5585BA;
+  color: #000;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: 1px solid #1a1a1a;
+  border-radius: 25px;
+  padding: 9px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 
+    0 3px 5px rgba(0, 0, 0, 0.25), 
+    inset 0 -2px 0 rgba(0, 0, 0, 0.25), 
+    inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.btn-carrito:hover {
+  transform: scale(1.02);
+  opacity: 0.95;
+}
+
+.btn-carrito:active {
+  transform: scale(0.98);
+}
+
+.icono-cart {
+  font-size: 1.1rem;
+}
+
+/* Responsive para pantallas chicas */
+@media (max-width: 950px) {
+  main.catalogo-main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  main.catalogo-main {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+}
+
+.icono-cart{
+  color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*=========================================
+        CATÁLOGO DE LAPTOPS (ISOLATED)
+=========================================*/
+
+/* Grid contenedor de 3 columnas */
+main.catalogo-laptops {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 35px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Tarjeta contenedora estilo laptop */
+.tarjeta-laptop {
+  background-color: #F5F9FF;
+  border: 2px solid #222222;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Espacio para la imagen de la laptop */
+.imagen-laptop {
+  width: 100%;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.imagen-laptop img {
+  max-width: 100%;
+  max-height: 125%;
+  object-fit: contain;
+}
+
+/* Título */
+.titulo-laptop {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+/* Viñetas e información técnica */
+.specs-laptop {
+  list-style: disc;
+  margin-left: 18px;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.specs-laptop li {
+  font-size: 0.82rem;
+  font-weight: 500;
+  margin-bottom: 3px;
+  line-height: 1.25;
+}
+
+/* Precio */
+.precio-laptop {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 12px;
+}
+
+/* Botón "Agregar al carrito" con sombra/relieve */
+.btn-carrito-laptop {
+  width: 100%;
+  background: linear-gradient(180deg, #6090c2 0%, #527dae 100%);
+  color: #000;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: 1px solid #1a1a1a;
+  border-radius: 25px;
+  padding: 9px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 
+    0 3px 5px rgba(0, 0, 0, 0.25), 
+    inset 0 -2px 0 rgba(0, 0, 0, 0.25), 
+    inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.btn-carrito-laptop:hover {
+  transform: scale(1.02);
+  opacity: 0.95;
+}
+
+.btn-carrito-laptop:active {
+  transform: scale(0.98);
+}
+
+.icono-cart {
+  font-size: 1.1rem;
+}
+
+/* Adaptación Responsive */
+@media (max-width: 950px) {
+  main.catalogo-laptops {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  main.catalogo-laptops {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+}
