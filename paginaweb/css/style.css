@@ -571,3 +571,10 @@ footer ul li a:hover {
   border-top: 1px solid #0e0a0c;
   font-size: 14px;
 }
+.catalogo-productos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  gap: 20px;
+  background-color: #a8c4e0; /* Color de fondo similar */
+  padding: 20px;
+}
