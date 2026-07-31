@@ -310,16 +310,18 @@ nav ul li a:hover {
   min-height: 200px;
 }
 
-.descuento {
+.descuento{
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #ff1b1b;
-  color: #fff;
-  padding: 6px 14px;
-  border-radius: 20px;
+  top: 15px;
+  right: 15px;
+  background-color: #ff0000;
+  color: #ffffff;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 13px;
+  padding: 4px 10px;
+  z-index: 10;
+  clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%); /* Forma de flecha/cinta */
+  padding-right: 14px;
 }
 
 .info-producto {
@@ -850,6 +852,24 @@ main.catalogo-main {
   object-fit: contain;
 }
 
+.imagen-prod .img-prod1 {
+  max-width: 100%;
+  max-height: 95%;
+  object-fit: contain;
+}
+
+.imagen-prod .img-prod2 {
+  max-width: 90%;
+  max-height: 74%;
+  object-fit: contain;
+}
+
+.imagen-prod .img-prod3 {
+  max-width: 95%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
 /* Títulos */
 .titulo-prod {
   font-size: 1.25rem;
@@ -932,6 +952,45 @@ main.catalogo-main {
     padding: 15px;
   }
 }
+
+/* --- ESTILOS DE LA TARJETA --- */
+.tarjeta-prod {
+  position: relative; /* CLAVE: Permite posicionar el descuento dentro de la tarjeta */
+
+}
+
+
+/* --- ETIQUETA ROJA DE DESCUENTO --- */
+.descuento-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #ff0000;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 13px;
+  padding: 4px 10px;
+  z-index: 10;
+  clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%); /* Forma de flecha/cinta */
+  padding-right: 14px;
+}
+
+.precio-anterior {
+  display: block;
+  font-size: 15px;
+  color: #777777;
+  text-decoration: line-through;
+  text-decoration-color: #ff0000; /* Línea de tachado roja */
+  text-decoration-thickness: 2px;
+  margin-bottom: 2px;
+}
+
+
+
+
+
+
+
 
 
 
