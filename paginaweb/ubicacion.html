@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technologic Store - Seguimiento y Ubicación</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img
+          src="https://i.postimg.cc/56Dy0JBP/Logo-inicio.png"
+          alt="Logo Technologic Store"
+        />
+        <h1>TECHNOLOGIC STORE</h1>
+      </div>
+
+      <form class="buscador">
+        <input type="search" placeholder="Celulares" />
+        <button type="submit">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/622/622669.png"
+            alt="Buscar"
+          />
+        </button>
+      </form>
+
+      <div class="carrito">
+        <a href="compras.html">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
+            alt="Carrito"
+          />
+        </a>
+      </div>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="inicio.html">INICIO</a></li>
+        <li><a href="ubicacion.html">UBICACIÓN</a></li>
+        <li><a href="acerca-de.html">ACERCA DE</a></li>
+        <li><a href="contactanos.html">CONTACTANOS</a></li>
+        <li><a href="ofertas.html">OFERTAS</a></li>
+      </ul>
+    </nav>
+
+    <main class="principal-seguimiento">
+      <section class="seguimiento-contenedor" id="seguimiento">
+        <div class="acerca-banner" style="margin-bottom: 35px">
+          <h2>Rastreo y Estado de Pedido</h2>
+        </div>
+
+        <div class="paneles-seguimiento">
+          <article class="tarjeta-prod panel-rastreo">
+            <div
+              class="icono-rastreo"
+              style="font-size: 2.5rem; text-align: center; margin-bottom: 10px"
+            >
+              📦
+            </div>
+            <h3 class="titulo-prod" style="text-align: center">
+              Rastrear mi pedido
+            </h3>
+            <p
+              class="specs-prod"
+              style="text-align: center; list-style: none; margin-bottom: 20px"
+            >
+              Ingresa el código recibido al realizar tu compra.
+            </p>
+
+            <form
+              action="#"
+              method="post"
+              class="formulario-rastreo"
+              style="display: flex; flex-direction: column; gap: 15px"
+            >
+              <label
+                for="numeroPedido"
+                style="
+                  position: absolute;
+                  width: 1px;
+                  height: 1px;
+                  overflow: hidden;
+                  clip: rect(0, 0, 0, 0);
+                "
+                >Número de pedido</label
+              >
+              <input
+                type="text"
+                id="numeroPedido"
+                class="form-contacto-group input"
+                style="
+                  width: 100%;
+                  background-color: #ebebeb;
+                  border: 1px solid #333333;
+                  padding: 12px 20px;
+                  border-radius: 25px;
+                  outline: none;
+                "
+                placeholder="Ej. TECH-2026-001"
+              />
+              <button type="submit" class="btn-carrito">Buscar pedido</button>
+            </form>
+          </article>
+
+          <article class="tarjeta-prod panel-estado">
+            <h3
+              class="titulo-prod"
+              style="text-align: center; margin-bottom: 20px"
+            >
+              Estado del envío
+            </h3>
+
+            <ol
+              class="linea-progreso-tech"
+              style="
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+              "
+            >
+              <li
+                class="paso-tech completado"
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 15px;
+                  font-weight: 600;
+                  color: #2e7d32;
+                "
+              >
+                <span
+                  class="punto-tech"
+                  style="
+                    width: 35px;
+                    height: 35px;
+                    background: #4caf50;
+                    color: #fff;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: bold;
+                  "
+                  >✓</span
+                >
+                <p>Pedido recibido</p>
+              </li>
+
+              <li
+                class="paso-tech activo"
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 15px;
+                  font-weight: 600;
+                  color: #1565c0;
+                "
+              >
+                <span
+                  class="punto-tech"
+                  style="
+                    width: 35px;
+                    height: 35px;
+                    background: #2196f3;
+                    color: #fff;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: bold;
+                  "
+                  >2</span
+                >
+                <p>Preparando producto</p>
+              </li>
+
+              <li
+                class="paso-tech"
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 15px;
+                  color: #666;
+                "
+              >
+                <span
+                  class="punto-tech"
+                  style="
+                    width: 35px;
+                    height: 35px;
+                    background: #ddd;
+                    color: #555;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: bold;
+                  "
+                  >3</span
+                >
+                <p>En camino</p>
+              </li>
+
+              <li
+                class="paso-tech"
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 15px;
+                  color: #666;
+                "
+              >
+                <span
+                  class="punto-tech"
+                  style="
+                    width: 35px;
+                    height: 35px;
+                    background: #ddd;
+                    color: #555;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: bold;
+                  "
+                  >4</span
+                >
+                <p>Entregado</p>
+              </li>
+            </ol>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="ubicacion-contenedor"
+        id="ubicacion"
+        style="margin: 50px auto; max-width: 1550px; padding: 0 20px"
+      >
+        <div class="acerca-banner" style="margin-bottom: 30px">
+          <h2>Nuestra Ubicación</h2>
+        </div>
+
+        <div
+          class="tarjeta-prod"
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+            padding: 30px;
+          "
+        >
+          <article class="info-tienda-tech">
+            <h3
+              class="titulo-prod"
+              style="font-size: 1.8rem; margin-bottom: 15px"
+            >
+              Technologic Store
+            </h3>
+            <address
+              class="direccion-tech"
+              style="
+                font-style: normal;
+                font-size: 1.1rem;
+                line-height: 2.2;
+                color: #111;
+              "
+            >
+              📍 Sonsonate, El Salvador
+              <br /><br />
+              📞 +503 7285-5317
+              <br /><br />
+              🕒 Lunes - Sábado <br />
+              8:00 AM - 6:00 PM
+            </address>
+          </article>
+
+          <figure class="mapa-tech" style="width: 100%">
+            <iframe
+              src="https://maps.google.com/maps?q=Sonsonate,+El+Salvador&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              class="mapa-iframe"
+              style="
+                width: 100%;
+                height: 320px;
+                border: 2px solid #222;
+                border-radius: 20px;
+              "
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <figcaption
+              class="mapa-leyenda"
+              style="text-align: center; margin-top: 10px; font-weight: 500"
+            ></figcaption>
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="copyright">
+        <h3>© 2026 Technologic Store.</h3>
+        <p>Todos los derechos reservados.</p>
+      </div>
+
+      <div class="politicas">
+        <h3>Políticas</h3>
+        <ul>
+          <li><a href="#">Términos y condiciones</a></li>
+          <li><a href="#">Políticas generales</a></li>
+          <li><a href="#">Devoluciones y cambios</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Términos y condiciones de promociones</a></li>
+        </ul>
+      </div>
+
+      <div class="servicio">
+        <h3>Servicio al Cliente</h3>
+        <ul>
+          <li><a href="#">Preguntas</a></li>
+          <li><a href="#">Devoluciones</a></li>
+        </ul>
+      </div>
+
+      <div class="contacto">
+        <h3>Teléfono de contacto:</h3>
+        <p><strong>+503 7285 5317</strong></p>
+      </div>
+
+      <div class="redes">
+        <h3>Síguenos</h3>
+        <div class="iconos">
+          <a href="#" aria-label="TikTok"
+            ><i class="fa-brands fa-tiktok"></i
+          ></a>
+          <a href="#" aria-label="Facebook"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+          <a href="#" aria-label="Instagram"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </footer>
+    <script src="/paginaweb/JavaScript/script.js"></script>
+  </body>
+</html>
