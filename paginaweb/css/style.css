@@ -122,11 +122,9 @@ header {
 
 
 
-
-
-
-
-
+/*=========================================
+   FUNCIONALIDAD DEL CARRITO (CONTADOR)
+=========================================*/
 
 /* Ajuste al contenedor del carrito */
 .carrito a {
@@ -171,13 +169,6 @@ header {
 .btn-carrito.agregado:hover {
   background-color: #c0392b;
 }
-
-
-
-
-
-
-
 
 
 
@@ -668,128 +659,6 @@ footer a:hover {
   }
 }
 
-/*=========================================
-                CONTACTANOS
-=========================================*/
-
-/* Contenedor principal del formulario */
-.form-contacto-container {
-  width: 100%;
-  max-width: 1550px;
-  margin: 40px auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-.form-contacto-body {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-/* Banners / Encabezados azules - CON SOMBREADO */
-.form-contacto-banner {
-  background: linear-gradient(180deg, #6090c2 0%, #527dae 100%);
-  border-radius: 50px;
-  padding: 12px 20px;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  /* El efecto de sombreado: sombra exterior suave y sombra interior */
-  box-shadow:
-    0 4px 6px rgba(199, 176, 176, 0.3),
-    /* Sombra exterior */ inset 0 -3px 0 rgba(250, 250, 250, 0.2),
-    /* Sombra interior inferior / inset 0 1px 1px rgba(228, 177, 177, 0.3); / Brillo interior superior */
-}
-
-.form-contacto-banner h2 {
-  margin: 0;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #000;
-}
-
-/* Contenedores de cada Input */
-.form-contacto-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.form-contacto-group label {
-  font-weight: 700;
-  font-size: 1rem;
-  color: #000;
-  margin-left: 8px;
-}
-
-/* Campos de entrada */
-.form-contacto-group input,
-.form-contacto-group textarea {
-  width: 100%;
-  background-color: #ebebeb;
-  border: 1px solid #333333;
-  padding: 12px 20px;
-  font-size: 1rem;
-  color: #222222;
-  box-sizing: border-box;
-  outline: none;
-}
-
-.form-contacto-group input {
-  border-radius: 25px;
-}
-
-.form-contacto-group textarea {
-  border-radius: 20px;
-  resize: vertical;
-}
-
-/* Textos informativos (Placeholders) */
-.form-contacto-group input::placeholder,
-.form-contacto-group textarea::placeholder {
-  color: #a0a0a0;
-}
-
-/* Botón Enviar - CON SOMBREADO */
-.form-contacto-submit {
-  background: linear-gradient(180deg, #6090c2 0%, #527dae 100%);
-  color: #000;
-  font-weight: bold;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 50px;
-  padding: 12px 20px;
-  cursor: pointer;
-  margin-top: 10px;
-  /* Mismo efecto de sombreado */
-  box-shadow:
-    0 4px 6px rgba(0, 0, 0, 0.3),
-    inset 0 -3px 0 rgba(0, 0, 0, 0.2),
-    inset 0 1px 1px rgba(255, 255, 255, 0.3);
-  transition:
-    transform 0.2s ease,
-    opacity 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.form-contacto-submit:hover {
-  transform: scale(1.02);
-  opacity: 0.95;
-}
-
-/* Efecto al presionar el botón */
-.form-contacto-submit:active {
-  transform: scale(0.98);
-  box-shadow:
-    0 2px 3px rgba(0, 0, 0, 0.3),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.2),
-    inset 0 1px 1px rgba(255, 255, 255, 0.3);
-}
-
-
-
-
 
 
 
@@ -1163,7 +1032,7 @@ main.catalogo-main {
 
 
 /*=========================================
- CATÁLOGOS: OFERTAS (Incluida con productos)
+ CATÁLOGOS: OFERTAS (INCLUIDA CON PRODUCTOS)
 =========================================*/
 
 /* --- ESTILOS DE LA TARJETA --- */
@@ -1213,7 +1082,7 @@ main.catalogo-main {
 
 
 /* =========================================
-   ESTILOS EXCLUSIVOS PARA SEGUIMIENTO Y UBICACIÓN
+                  UBICACIÓN
    ========================================= */
 
 /* Contenedor principal de la vista */
