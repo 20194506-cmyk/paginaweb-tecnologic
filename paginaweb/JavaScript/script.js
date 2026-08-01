@@ -80,3 +80,78 @@ document.addEventListener("DOMContentLoaded", () => {
   // Se ha removido cualquier modificación para que las imágenes
   // se queden estáticas y naturales tal como las tienes en tu diseño base.
 });
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const contadorElemento = document.getElementById('contador-carrito');
+  const botonesAgregar = document.querySelectorAll('.btn-carrito');
+
+  // Cargar lista de IDs guardados en el carrito desde localStorage
+  let carrito = JSON.parse(localStorage.getItem('carritoProductos')) || [];
+
+  // Función para actualizar la vista global
+  function actualizarVista() {
+    // 1. Actualizar el número total del contador
+    contadorElemento.textContent = carrito.length;
+
+    // 2. Actualizar el estado de cada botón en la página
+    botonesAgregar.forEach(boton => {
+      const productoId = boton.getAttribute('data-id');
+
+      if (carrito.includes(productoId)) {
+        // Si el producto ya está en el carrito
+        boton.classList.add('agregado');
+        boton.innerHTML = '<span class="icono-cart">❌</span> Quitar del carrito';
+      } else {
+        // Si el producto NO está en el carrito
+        boton.classList.remove('agregado');
+        boton.innerHTML = '<span class="icono-cart">🛒</span> Agregar al carrito';
+      }
+    });
+  }
+
+  // Escuchar eventos de clic en los botones
+  botonesAgregar.forEach(boton => {
+    boton.addEventListener('click', () => {
+      const productoId = boton.getAttribute('data-id');
+
+      if (!productoId) {
+        console.error("Falta añadir el atributo data-id al botón HTML");
+        return;
+      }
+
+      if (carrito.includes(productoId)) {
+        // CANCELAR / QUITAR: Si ya estaba, lo eliminamos de la lista
+        carrito = carrito.filter(id => id !== productoId);
+      } else {
+        // AGREGAR: Si no estaba, lo sumamos a la lista
+        carrito.push(productoId);
+      }
+
+      // Guardar lista en localStorage y refrescar la pantalla
+      localStorage.setItem('carritoProductos', JSON.stringify(carrito));
+      actualizarVista();
+
+      // Animación rápida al contador
+      contadorElemento.classList.add('bump');
+      setTimeout(() => contadorElemento.classList.remove('bump'), 200);
+    });
+  });
+
+  // Inicializar al cargar la página
+  actualizarVista();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
