@@ -303,14 +303,14 @@ nav ul li a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #F7FAFF;
+  background: #f7faff;
   border: 2px solid #666;
   border-radius: 20px;
   padding: 20px;
   min-height: 200px;
 }
 
-.descuento{
+.descuento {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -320,7 +320,13 @@ nav ul li a:hover {
   font-size: 13px;
   padding: 4px 10px;
   z-index: 10;
-  clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%); /* Forma de flecha/cinta */
+  clip-path: polygon(
+    0% 0%,
+    85% 0%,
+    100% 50%,
+    85% 100%,
+    0% 100%
+  ); /* Forma de flecha/cinta */
   padding-right: 14px;
 }
 
@@ -356,7 +362,7 @@ nav ul li a:hover {
   width: 200px;
   height: 195px;
   object-fit: contain;
-} 
+}
 
 .boton-ofertas {
   display: flex;
@@ -402,19 +408,21 @@ nav ul li a:hover {
 
 footer {
   width: 100%;
-  margin-top: 50px;
+  margin-top: 0; /* Se elimina el espacio/línea blanca superior */
   background: #cfe5f3;
   border-top: 2px solid #8ea9ba;
   display: grid;
   grid-template-columns: 1.2fr 1.4fr 1.2fr 1fr 1fr;
   gap: 35px;
   padding: 35px 45px;
+  box-sizing: border-box;
 }
 
 footer h3 {
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 15px;
+  color: #000;
 }
 
 footer p,
@@ -427,6 +435,8 @@ footer a {
 
 footer ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 footer li {
@@ -454,7 +464,7 @@ footer a:hover {
 .redes {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .redes h3 {
@@ -465,20 +475,23 @@ footer a:hover {
 
 .iconos {
   display: grid;
-  grid-template-columns: repeat(3, 55px);
-  gap: 18px;
-  justify-content: center;
-  margin-top: 10px;
+  grid-template-columns: repeat(3, auto);
+  gap: 15px 20px;
+  justify-content: start;
+  align-items: center;
 }
 
 .iconos a {
-  font-size: 48px;
+  font-size: 40px;
   transition: 0.3s ease;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .iconos a:hover {
-  transform: scale(1.15);
+  transform: scale(1.12);
 }
 
 /* TikTok */
@@ -506,7 +519,11 @@ footer a:hover {
   -webkit-text-fill-color: transparent;
 }
 
-
+/* X (Twitter) */
+.iconos a:nth-child(4) {
+  color: #000;
+  grid-column: 1;
+}
 
 /*=========================================
                 RESPONSIVE
@@ -580,6 +597,125 @@ footer a:hover {
   .iconos {
     justify-content: center;
   }
+}
+
+/*=========================================
+                CONTACTANOS
+=========================================*/
+
+/* Contenedor principal del formulario */
+.form-contacto-container {
+  width: 100%;
+  max-width: 1550px;
+  margin: 40px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.form-contacto-body {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Banners / Encabezados azules - CON SOMBREADO */
+.form-contacto-banner {
+  background: linear-gradient(180deg, #6090c2 0%, #527dae 100%);
+  border-radius: 50px;
+  padding: 12px 20px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  /* El efecto de sombreado: sombra exterior suave y sombra interior */
+  box-shadow:
+    0 4px 6px rgba(199, 176, 176, 0.3),
+    /* Sombra exterior */ inset 0 -3px 0 rgba(250, 250, 250, 0.2),
+    /* Sombra interior inferior / inset 0 1px 1px rgba(228, 177, 177, 0.3); / Brillo interior superior */
+}
+
+.form-contacto-banner h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #000;
+}
+
+/* Contenedores de cada Input */
+.form-contacto-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-contacto-group label {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #000;
+  margin-left: 8px;
+}
+
+/* Campos de entrada */
+.form-contacto-group input,
+.form-contacto-group textarea {
+  width: 100%;
+  background-color: #ebebeb;
+  border: 1px solid #333333;
+  padding: 12px 20px;
+  font-size: 1rem;
+  color: #222222;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.form-contacto-group input {
+  border-radius: 25px;
+}
+
+.form-contacto-group textarea {
+  border-radius: 20px;
+  resize: vertical;
+}
+
+/* Textos informativos (Placeholders) */
+.form-contacto-group input::placeholder,
+.form-contacto-group textarea::placeholder {
+  color: #a0a0a0;
+}
+
+/* Botón Enviar - CON SOMBREADO */
+.form-contacto-submit {
+  background: linear-gradient(180deg, #6090c2 0%, #527dae 100%);
+  color: #000;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  /* Mismo efecto de sombreado */
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.3),
+    inset 0 -3px 0 rgba(0, 0, 0, 0.2),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-contacto-submit:hover {
+  transform: scale(1.02);
+  opacity: 0.95;
+}
+
+/* Efecto al presionar el botón */
+.form-contacto-submit:active {
+  transform: scale(0.98);
+  box-shadow:
+    0 2px 3px rgba(0, 0, 0, 0.3),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
 }
 
 
@@ -953,12 +1089,17 @@ main.catalogo-main {
   }
 }
 
+
+/*=========================================
+     CATÁLOGOS: OFERTAS
+=========================================*/
+
+
 /* --- ESTILOS DE LA TARJETA --- */
 .tarjeta-prod {
   position: relative; /* CLAVE: Permite posicionar el descuento dentro de la tarjeta */
 
 }
-
 
 /* --- ETIQUETA ROJA DE DESCUENTO --- */
 .descuento-badge {
