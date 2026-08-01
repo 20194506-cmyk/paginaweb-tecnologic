@@ -401,26 +401,27 @@ nav ul li a:hover {
 
 .btn-ver-ofertas:hover {
   transform: scale(1.03);
-}
-/*=========================================
+} /*=========================================
                 FOOTER
 =========================================*/
 
 footer {
   width: 100%;
-  margin-top: 50px;
+  margin-top: 0; /* Se elimina el espacio/línea blanca superior */
   background: #cfe5f3;
   border-top: 2px solid #8ea9ba;
   display: grid;
   grid-template-columns: 1.2fr 1.4fr 1.2fr 1fr 1fr;
   gap: 35px;
   padding: 35px 45px;
+  box-sizing: border-box;
 }
 
 footer h3 {
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 15px;
+  color: #000;
 }
 
 footer p,
@@ -433,6 +434,8 @@ footer a {
 
 footer ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 footer li {
@@ -460,7 +463,7 @@ footer a:hover {
 .redes {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .redes h3 {
@@ -471,20 +474,23 @@ footer a:hover {
 
 .iconos {
   display: grid;
-  grid-template-columns: repeat(3, 55px);
-  gap: 18px;
-  justify-content: center;
-  margin-top: 10px;
+  grid-template-columns: repeat(3, auto);
+  gap: 15px 20px;
+  justify-content: start;
+  align-items: center;
 }
 
 .iconos a {
-  font-size: 48px;
+  font-size: 40px;
   transition: 0.3s ease;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .iconos a:hover {
-  transform: scale(1.15);
+  transform: scale(1.12);
 }
 
 /* TikTok */
@@ -510,6 +516,12 @@ footer a:hover {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* X (Twitter) */
+.iconos a:nth-child(4) {
+  color: #000;
+  grid-column: 1;
 }
 
 /*=========================================
@@ -1084,4 +1096,137 @@ html {
 
 html::-webkit-scrollbar {
   display: none;
+}
+/* =========================================
+   ESTILOS EXCLUSIVOS PARA SEGUIMIENTO Y UBICACIÓN
+   ========================================= */
+
+/* Contenedor principal de la vista */
+.principal-seguimiento {
+  width: 100%;
+  max-width: 1550px;
+  margin: 40px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Sección de Seguimiento */
+.seguimiento-contenedor {
+  margin-bottom: 50px;
+}
+
+.paneles-seguimiento {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+/* Paneles individuales tipo tarjeta para mantener coherencia */
+.principal-seguimiento .tarjeta-prod {
+  background-color: #f5f9ff;
+  border: 2px solid #222222;
+  border-radius: 25px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+/* Línea de progreso de envío personalizada */
+.linea-progreso-tech {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.paso-tech {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: 600;
+  color: #666;
+}
+
+.punto-tech {
+  width: 35px;
+  height: 35px;
+  background: #ddd;
+  color: #555;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* Estados de la línea de progreso */
+.paso-tech.completado {
+  color: #2e7d32;
+}
+.paso-tech.completado .punto-tech {
+  background: #4caf50;
+  color: #fff;
+}
+
+.paso-tech.activo {
+  color: #1565c0;
+}
+.paso-tech.activo .punto-tech {
+  background: #2196f3;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(33, 150, 243, 0.4);
+}
+
+/* Sección de Ubicación */
+.ubicacion-contenedor {
+  margin: 50px auto;
+  max-width: 1550px;
+  padding: 0;
+}
+
+.ubicacion-contenedor .tarjeta-prod {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.direccion-tech {
+  font-style: normal;
+  font-size: 1.1rem;
+  line-height: 2.2;
+  color: #111;
+}
+
+.mapa-tech {
+  width: 100%;
+}
+
+.mapa-iframe {
+  width: 100%;
+  height: 320px;
+  border: 2px solid #222;
+  border-radius: 20px;
+}
+
+.mapa-leyenda {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* =========================================
+   RESPONSIVE (MÓVIL Y TABLET)
+   ========================================= */
+@media (max-width: 950px) {
+  .paneles-seguimiento,
+  .ubicacion-contenedor .tarjeta-prod {
+    grid-template-columns: 1fr;
+  }
 }
