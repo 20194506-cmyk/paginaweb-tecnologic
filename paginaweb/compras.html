@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Compras</title>
+    <title>Carrito y Compras - Technologic Store</title>
     <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
@@ -21,7 +21,7 @@
       </div>
 
       <form class="buscador">
-        <input type="search" placeholder="Celulares" />
+        <input type="search" placeholder="Buscar productos..." />
         <button type="submit">
           <img
             src="https://cdn-icons-png.flaticon.com/512/622/622669.png"
@@ -30,16 +30,15 @@
         </button>
       </form>
 
-<div class="carrito">
-  <a href="compras.html" id="btn-carrito-link">
-    <img
-      src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
-      alt="Carrito"
-    />
-    <!-- Burbuja del contador -->
-    <span id="contador-carrito">0</span>
-  </a>
-</div>
+      <div class="carrito">
+        <a href="compras.html">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
+            alt="Carrito"
+          />
+          <span id="contador-carrito">0</span>
+        </a>
+      </div>
     </header>
 
     <nav>
@@ -52,8 +51,110 @@
       </ul>
     </nav>
 
-    <main>
-      
+    <main class="principal-seguimiento">
+      <section class="seguimiento-contenedor" id="seccion-carrito-vista">
+        <div class="acerca-banner">
+          <h2>Tu Carrito de Compras</h2>
+        </div>
+
+        <div
+          class="tarjeta-prod panel-rastreo"
+          style="width: 100%; margin-top: 20px"
+        >
+          <h3 class="titulo-prod">Productos Seleccionados</h3>
+
+          <ul id="lista-carrito-detallada" class="specs-prod"></ul>
+
+          <div
+            class="precio-prod"
+            style="margin: 20px 0; font-size: 1.3rem; font-weight: bold"
+          >
+            Total a Pagar: $<span id="total-pagar">0.00</span>
+          </div>
+        </div>
+
+        <div
+          class="tarjeta-prod panel-rastreo"
+          style="width: 100%; margin-top: 20px"
+        >
+          <h3 class="titulo-prod" style="margin-bottom: 15px;">Información de Pago y Envío</h3>
+          <form id="form-pago" onsubmit="event.preventDefault(); procesarPagoYGenerarCodigo();" style="display: flex; flex-direction: column; gap: 12px;">
+            <div>
+              <label style="display: block; font-size: 0.9rem; margin-bottom: 5px; font-weight: bold;">Nombre del titular:</label>
+              <input type="text" placeholder="Ej. Juan Pérez" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.9rem; margin-bottom: 5px; font-weight: bold;">Número de Tarjeta:</label>
+              <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="19" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <div style="flex: 1;">
+                <label style="display: block; font-size: 0.9rem; margin-bottom: 5px; font-weight: bold;">Expiración:</label>
+                <input type="text" placeholder="MM/AA" maxlength="5" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
+              </div>
+              <div style="flex: 1;">
+                <label style="display: block; font-size: 0.9rem; margin-bottom: 5px; font-weight: bold;">CVV:</label>
+                <input type="password" placeholder="123" maxlength="4" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
+              </div>
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.9rem; margin-bottom: 5px; font-weight: bold;">Dirección de Entrega:</label>
+              <input type="text" placeholder="Colonia, Calle, Casa N°" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
+            </div>
+
+            <button type="submit" class="btn-carrito" style="margin-top: 15px; width: 100%; cursor: pointer;">
+              <i class="fa-solid fa-credit-card icono-cart"></i> Pagar y Procesar Pedido
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section
+        id="seccion-exito"
+        style="display: none"
+        class="seguimiento-contenedor"
+      >
+        <div class="acerca-banner">
+          <h2>¡Pago Exitoso y Compra Realizada!</h2>
+        </div>
+
+        <div
+          class="tarjeta-prod panel-rastreo"
+          style="width: 100%; margin-top: 20px; text-align: center"
+        >
+          <p class="specs-prod">
+            ¡Tu pago ha sido validado correctamente! Tu pedido ya está en preparación.
+          </p>
+          <p class="specs-prod" style="margin-top: 10px">
+            Tu código único de rastreo generado es:
+          </p>
+
+          <h1
+            id="codigo-generado"
+            class="titulo-prod"
+            style="color: #1565c0; font-size: 2.5rem; margin: 20px 0"
+          ></h1>
+
+          <p class="specs-prod" style="font-size: 0.95rem; margin-bottom: 25px">
+            Copia este código y dirígete a la sección de
+            <strong>Ubicación</strong> para rastrear el estado en tiempo real de
+            tu envío.
+          </p>
+
+          <a
+            href="ubicacion.html"
+            class="btn-carrito"
+            style="
+              display: inline-block;
+              text-decoration: none;
+              max-width: 300px;
+              margin: 0 auto;
+            "
+          >
+            Ir a Ubicación y Rastrear
+          </a>
+        </div>
+      </section>
     </main>
 
     <footer>
@@ -88,28 +189,21 @@
 
       <div class="redes">
         <h3>Síguenos</h3>
-
         <div class="iconos">
-          <a href="#" aria-label="TikTok">
-            <i class="fa-brands fa-tiktok"></i>
-          </a>
-
-          <a href="#" aria-label="Facebook">
-            <i class="fa-brands fa-facebook-f"></i>
-          </a>
-
-          <a href="#" aria-label="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-
-          <a href="#" aria-label="X">
-            <i class="fa-brands fa-x-twitter"></i>
-          </a>
+          <a href="#" aria-label="TikTok"
+            ><i class="fa-brands fa-tiktok"></i
+          ></a>
+          <a href="#" aria-label="Facebook"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+          <a href="#" aria-label="Instagram"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
         </div>
       </div>
     </footer>
 
     <script src="JavaScript/script.js"></script>
-    
   </body>
 </html>

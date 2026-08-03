@@ -11,6 +11,17 @@
   font-family: "Poppins", sans-serif;
 }
 
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   background: #dcefff;
   color: #111;
@@ -102,6 +113,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  text-decoration: none;
 }
 
 .carrito img {
@@ -116,31 +129,11 @@ header {
   transform: scale(1.1);
 }
 
-
-
-
-
-
-
-/*=========================================
-   FUNCIONALIDAD DEL CARRITO (CONTADOR)
-=========================================*/
-
-/* Ajuste al contenedor del carrito */
-.carrito a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative; /* Base para posicionar el contador */
-  text-decoration: none;
-}
-
-/* Estilos para el contador (burbuja) */
 #contador-carrito {
   position: absolute;
   top: -5px;
   right: -8px;
-  background-color: #e74c3c; /* Rojo destacable */
+  background-color: #e74c3c;
   color: #ffffff;
   font-size: 13px;
   font-weight: bold;
@@ -155,26 +148,18 @@ header {
   transition: transform 0.2s ease;
 }
 
-/* Animación rápida cuando sube la cuenta */
 #contador-carrito.bump {
   transform: scale(1.3);
 }
 
-/* Botón cuando el producto ya está en el carrito */
 .btn-carrito.agregado {
-  background-color: #e74c3c; /* Color rojo para cancelar */
+  background-color: #e74c3c;
   color: white;
 }
 
 .btn-carrito.agregado:hover {
   background-color: #c0392b;
 }
-
-
-
-
-
-
 
 /*=========================================
                 MENÚ
@@ -195,14 +180,32 @@ nav ul {
 }
 
 nav ul li a {
+  position: relative;
   font-size: 17px;
   font-weight: 600;
   color: #111;
-  transition: 0.3s;
+  transition: 0.3s ease;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 3px;
+  background: #5585ba;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
 }
 
 nav ul li a:hover {
-  color: #1878d8;
+  color: #5585ba;
+  transform: translateY(-3px);
 }
 
 /*=========================================
@@ -244,7 +247,7 @@ nav ul li a:hover {
 }
 
 /*=========================================
-            CATEGORÍAS
+              CATEGORÍAS INICIO
 =========================================*/
 
 .categorias {
@@ -273,12 +276,22 @@ nav ul li a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: 0.4s ease;
+  overflow: hidden;
+  position: relative;
 }
+
+.categoria:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+}
+
 .categoria h2 {
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 15px;
 }
+
 .contenedor-imagen {
   width: 250px;
   height: 200px;
@@ -293,8 +306,13 @@ nav ul li a:hover {
   height: 400px;
   object-fit: contain;
   transform: translateY(15px);
-  transition: transform 0.3s ease;
+  transition: 0.5s ease;
 }
+
+.categoria:hover img {
+  transform: scale(1.1);
+}
+
 .btn-categoria {
   width: 250px;
   height: 65px;
@@ -321,11 +339,16 @@ nav ul li a:hover {
     inset 0 2px 4px rgba(255, 255, 255, 0.45),
     inset 0 -4px 8px rgba(0, 0, 0, 0.08),
     0 8px 18px rgba(0, 0, 0, 0.22);
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .btn-categoria:hover {
-  transform: scale(1.03);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-categoria:active {
+  transform: scale(0.95);
 }
 
 /*=========================================
@@ -368,6 +391,13 @@ nav ul li a:hover {
   border-radius: 20px;
   padding: 20px;
   min-height: 200px;
+  transition: 0.4s ease;
+  overflow: hidden;
+}
+
+.tarjeta-oferta:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
 }
 
 .descuento {
@@ -386,8 +416,13 @@ nav ul li a:hover {
     100% 50%,
     85% 100%,
     0% 100%
-  ); /* Forma de flecha/cinta */
+  );
   padding-right: 14px;
+  transition: 0.3s ease;
+}
+
+.tarjeta-oferta:hover .descuento {
+  transform: scale(1.15);
 }
 
 .info-producto {
@@ -416,12 +451,17 @@ nav ul li a:hover {
   width: 250px;
   height: 250px;
   object-fit: contain;
+  transition: 0.5s ease;
 }
 
 .imagen-producto img.telefono {
   width: 200px;
   height: 195px;
   object-fit: contain;
+}
+
+.tarjeta-oferta:hover img {
+  transform: scale(1.08) rotate(2deg);
 }
 
 .boton-ofertas {
@@ -456,19 +496,43 @@ nav ul li a:hover {
     inset 0 2px 4px rgba(255, 255, 255, 0.45),
     inset 0 -4px 8px rgba(0, 0, 0, 0.08),
     0 8px 18px rgba(0, 0, 0, 0.22);
-  transition: all 0.3s ease;
+  transition: 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ver-ofertas::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 80%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.35);
+  transform: skewX(-25deg);
+  transition: 0.5s ease;
+}
+
+.btn-ver-ofertas:hover::before {
+  left: 130%;
 }
 
 .btn-ver-ofertas:hover {
-  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.08);
 }
+
+.btn-ver-ofertas:active {
+  filter: brightness(0.95);
+}
+
 /*=========================================
                 FOOTER
 =========================================*/
 
 footer {
   width: 100%;
-  margin-top: 0; /* Se elimina el espacio/línea blanca superior */
+  margin-top: 0;
   background: #cfe5f3;
   border-top: 2px solid #8ea9ba;
   display: grid;
@@ -554,17 +618,14 @@ footer a:hover {
   transform: scale(1.12);
 }
 
-/* TikTok */
 .iconos a:nth-child(1) {
   color: #000;
 }
 
-/* Facebook */
 .iconos a:nth-child(2) {
   color: #1877f2;
 }
 
-/* Instagram */
 .iconos a:nth-child(3) {
   background: linear-gradient(
     45deg,
@@ -579,100 +640,15 @@ footer a:hover {
   -webkit-text-fill-color: transparent;
 }
 
-/* X (Twitter) */
 .iconos a:nth-child(4) {
   color: #000;
   grid-column: 1;
 }
 
 /*=========================================
-                RESPONSIVE
+                CONTÁCTANOS
 =========================================*/
 
-@media (max-width: 1100px) {
-  header {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  nav ul {
-    flex-wrap: wrap;
-  }
-
-  .banner {
-    padding: 30px;
-  }
-
-  .contenido-banner {
-    width: 100%;
-  }
-
-  .contenido-banner h2 {
-    font-size: 36px;
-  }
-
-  .contenido-banner p {
-    font-size: 18px;
-  }
-
-  .categorias {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 20px 60px 40px;
-    background: linear-gradient(
-      to bottom,
-      #dcecff 0%,
-      #c9def5 20%,
-      #a9c8e8 45%,
-      #7ea8d4 75%,
-      #5585ba 100%
-    );
-  }
-
-  .ofertas {
-    width: 100%;
-    padding: 40px 40px 70px;
-    background: linear-gradient(
-      to bottom,
-      #dcecff 0%,
-      #c9def5 20%,
-      #a9c8e8 45%,
-      #7ea8d4 75%,
-      #5585ba 100%
-    );
-  }
-
-  .grid-ofertas {
-    grid-template-columns: 1fr;
-  }
-
-  footer {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 25px;
-  }
-
-  .iconos {
-    justify-content: center;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-/*=========================================
-                CONTACTANOS
-=========================================*/
-
-/* Contenedor principal del formulario */
 .form-contacto-container {
   width: 100%;
   max-width: 1550px;
@@ -687,7 +663,6 @@ footer a:hover {
   gap: 15px;
 }
 
-/* Banners / Encabezados azules - CON SOMBREADO */
 .form-contacto-banner {
   background: linear-gradient(180deg, #6090c2 0%, #527dae 100%);
   border-radius: 50px;
@@ -695,11 +670,9 @@ footer a:hover {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 5px;
-  /* El efecto de sombreado: sombra exterior suave y sombra interior */
-  box-shadow: 
-    0 4px 6px rgba(199, 176, 176, 0.3), /* Sombra exterior */
-    inset 0 -3px 0 rgba(250, 250, 250, 0.2), /* Sombra interior inferior */
-    inset 0 1px 1px rgba(228, 177, 177, 0.3); /* Brillo interior superior */
+  box-shadow:
+    0 4px 6px rgba(199, 176, 176, 0.3),
+    inset 0 -3px 0 rgba(250, 250, 250, 0.2);
 }
 
 .form-contacto-banner h2 {
@@ -709,7 +682,6 @@ footer a:hover {
   color: #000;
 }
 
-/* Contenedores de cada Input */
 .form-contacto-group {
   display: flex;
   flex-direction: column;
@@ -723,7 +695,6 @@ footer a:hover {
   margin-left: 8px;
 }
 
-/* Campos de entrada */
 .form-contacto-group input,
 .form-contacto-group textarea {
   width: 100%;
@@ -745,13 +716,11 @@ footer a:hover {
   resize: vertical;
 }
 
-/* Textos informativos (Placeholders) */
 .form-contacto-group input::placeholder,
 .form-contacto-group textarea::placeholder {
   color: #a0a0a0;
 }
 
-/* Botón Enviar - CON SOMBREADO */
 .form-contacto-submit {
   background: linear-gradient(180deg, #6090c2 0%, #527dae 100%);
   color: #000;
@@ -762,12 +731,14 @@ footer a:hover {
   padding: 12px 20px;
   cursor: pointer;
   margin-top: 10px;
-  /* Mismo efecto de sombreado */
-  box-shadow: 
-    0 4px 6px rgba(0, 0, 0, 0.3), 
-    inset 0 -3px 0 rgba(0, 0, 0, 0.2), 
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.3),
+    inset 0 -3px 0 rgba(0, 0, 0, 0.2),
     inset 0 1px 1px rgba(255, 255, 255, 0.3);
-  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .form-contacto-submit:hover {
@@ -775,40 +746,23 @@ footer a:hover {
   opacity: 0.95;
 }
 
-/* Efecto al presionar el botón */
 .form-contacto-submit:active {
   transform: scale(0.98);
-  box-shadow: 
-    0 2px 3px rgba(0, 0, 0, 0.3), 
-    inset 0 -1px 0 rgba(0, 0, 0, 0.2), 
+  box-shadow:
+    0 2px 3px rgba(0, 0, 0, 0.3),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2),
     inset 0 1px 1px rgba(255, 255, 255, 0.3);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*=========================================
-               ACERCA DE
+                ACERCA DE
 =========================================*/
 
 .acerca-de-container {
   width: 100%;
-  max-width: 1550px; /* <--- Aumentado para que las barras sean más largas */
+  max-width: 1550px;
   margin: 40px auto;
-  padding: 0 10px; /* <--- Menos margen a los bordes para ganar espacio */
+  padding: 0 10px;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -860,36 +814,10 @@ footer a:hover {
   font-weight: 700;
 }
 
-@media (max-width: 768px) {
-  .acerca-banner h2 {
-    font-size: 1.2rem;
-  }
-
-  .acerca-contenido p {
-    font-size: 0.95rem;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*=========================================
-     CATÁLOGOS: PRODUCTOS
+        CATÁLOGOS: PRODUCTOS
 =========================================*/
 
-/* Contenedor principal Grid de 3 columnas (Aplica a ambos) */
 main.catalogo-main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -899,7 +827,6 @@ main.catalogo-main {
   box-sizing: border-box;
 }
 
-/* Tarjeta contenedora con bordes redondeados */
 .tarjeta-prod {
   background-color: #f5f9ff;
   border: 2px solid #222222;
@@ -908,22 +835,56 @@ main.catalogo-main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s ease;
 }
 
-/* Imagen centrada y ajustada */
+.tarjeta-prod:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+}
+
+.tarjeta-prod::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  transition: 0.6s;
+}
+
+.tarjeta-prod:hover::before {
+  left: 120%;
+}
+
 .imagen-prod {
-  width: 100%;
-  height: 220px;
+  background: #f5f9ff;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 15px;
   margin-bottom: 12px;
 }
 
 .imagen-prod img {
-  max-width: 100%;
-  max-height: 105%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  transition: 0.4s ease;
+}
+
+.tarjeta-prod:hover .imagen-prod img {
+  transform: scale(1.08);
 }
 
 .imagen-prod .img-prod1 {
@@ -944,7 +905,6 @@ main.catalogo-main {
   object-fit: contain;
 }
 
-/* Títulos */
 .titulo-prod {
   font-size: 1.25rem;
   font-weight: 700;
@@ -952,7 +912,6 @@ main.catalogo-main {
   margin-bottom: 10px;
 }
 
-/* Listas con viñetas */
 .specs-prod {
   list-style: disc;
   margin-left: 18px;
@@ -967,7 +926,6 @@ main.catalogo-main {
   line-height: 1.35;
 }
 
-/* Precios */
 .precio-prod {
   font-size: 1.25rem;
   font-weight: 800;
@@ -975,7 +933,6 @@ main.catalogo-main {
   margin-bottom: 12px;
 }
 
-/* Botón estilo pill con sombras y relieve en degrada azul */
 .btn-carrito {
   width: 100%;
   background: linear-gradient(180deg, #6090c2 0%, #527dae 100%);
@@ -994,18 +951,36 @@ main.catalogo-main {
     0 3px 5px rgba(0, 0, 0, 0.25),
     inset 0 -2px 0 rgba(0, 0, 0, 0.25),
     inset 0 1px 1px rgba(255, 255, 255, 0.4);
-  transition:
-    transform 0.15s ease,
-    opacity 0.15s ease;
+  transition: 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-carrito:hover {
-  transform: scale(1.02);
-  opacity: 0.95;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .btn-carrito:active {
-  transform: scale(0.98);
+  transform: scale(0.95);
+}
+
+.btn-carrito::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
+}
+
+.btn-carrito:hover::after {
+  width: 250px;
+  height: 250px;
 }
 
 .icono-cart {
@@ -1013,35 +988,10 @@ main.catalogo-main {
   color: #000000;
 }
 
-/* Responsive para pantallas medianas y chicas */
-@media (max-width: 950px) {
-  main.catalogo-main {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  main.catalogo-main {
-    grid-template-columns: 1fr;
-    padding: 15px;
-  }
-}
-
-
-
-
-
 /*=========================================
- CATÁLOGOS: OFERTAS (INCLUIDA CON PRODUCTOS)
+        CATÁLOGOS: OFERTAS
 =========================================*/
 
-/* --- ESTILOS DE LA TARJETA --- */
-.tarjeta-prod {
-  position: relative; /* CLAVE: Permite posicionar el descuento dentro de la tarjeta */
-
-}
-
-/* --- ETIQUETA ROJA DE DESCUENTO --- */
 .descuento-badge {
   position: absolute;
   top: 15px;
@@ -1052,7 +1002,13 @@ main.catalogo-main {
   font-size: 13px;
   padding: 4px 10px;
   z-index: 10;
-  clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%); /* Forma de flecha/cinta */
+  clip-path: polygon(
+    0% 0%,
+    85% 0%,
+    100% 50%,
+    85% 100%,
+    0% 100%
+  );
   padding-right: 14px;
 }
 
@@ -1061,31 +1017,15 @@ main.catalogo-main {
   font-size: 15px;
   color: #777777;
   text-decoration: line-through;
-  text-decoration-color: #ff0000; /* Línea de tachado roja */
+  text-decoration-color: #ff0000;
   text-decoration-thickness: 2px;
   margin-bottom: 2px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* =========================================
-                  UBICACIÓN
-   ========================================= */
+   SEGUIMIENTO Y UBICACIÓN
+========================================= */
 
-/* Contenedor principal de la vista */
 .principal-seguimiento {
   width: 100%;
   max-width: 1550px;
@@ -1094,7 +1034,6 @@ main.catalogo-main {
   box-sizing: border-box;
 }
 
-/* Sección de Seguimiento */
 .seguimiento-contenedor {
   margin-bottom: 50px;
 }
@@ -1105,7 +1044,6 @@ main.catalogo-main {
   gap: 30px;
 }
 
-/* Paneles individuales tipo tarjeta para mantener coherencia */
 .principal-seguimiento .tarjeta-prod {
   background-color: #f5f9ff;
   border: 2px solid #222222;
@@ -1117,7 +1055,6 @@ main.catalogo-main {
   box-sizing: border-box;
 }
 
-/* Línea de progreso de envío personalizada */
 .linea-progreso-tech {
   list-style: none;
   display: flex;
@@ -1148,7 +1085,6 @@ main.catalogo-main {
   flex-shrink: 0;
 }
 
-/* Estados de la línea de progreso */
 .paso-tech.completado {
   color: #2e7d32;
 }
@@ -1166,7 +1102,6 @@ main.catalogo-main {
   box-shadow: 0 0 10px rgba(33, 150, 243, 0.4);
 }
 
-/* Sección de Ubicación */
 .ubicacion-contenedor {
   margin: 50px auto;
   max-width: 1550px;
@@ -1205,12 +1140,265 @@ main.catalogo-main {
   color: #333;
 }
 
-/* =========================================
-   RESPONSIVE (MÓVIL Y TABLET)
-   ========================================= */
-@media (max-width: 950px) {
+/*==========================
+        NOTIFICACIONES
+==========================*/
+
+#contenedorNotificaciones {
+  pointer-events: none;
+}
+
+#contenedorNotificaciones div {
+  min-width: 280px;
+  max-width: 350px;
+}
+
+/*==============================
+        BUSCADOR
+==============================*/
+
+#mensajeBusqueda {
+  font-size: 20px;
+  font-weight: 600;
+  color: #444;
+  animation: aparecer 0.3s;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*=========================================
+      RESPONSIVE GLOBAL (TABLETS Y MÓVILES)
+=========================================*/
+
+/* 1. PANTALLAS MEDIANAS Y TABLETS (Hasta 1024px) */
+@media (max-width: 1024px) {
+  header {
+    height: auto;
+    padding: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .logo {
+    justify-content: center;
+  }
+
+  .buscador {
+    margin: 10px 0;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  nav {
+    height: auto;
+    padding: 10px 0;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 5px 15px;
+  }
+
+  .banner {
+    padding: 30px 25px;
+    min-height: auto;
+  }
+
+  .texto-banner h2 {
+    font-size: 38px;
+    text-align: center;
+  }
+
+  .texto-banner p {
+    font-size: 18px;
+    text-align: left;
+  }
+
+  .categorias {
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 40px 20px;
+  }
+
+  .categoria {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .grid-ofertas {
+    grid-template-columns: 1fr;
+  }
+
+  main.catalogo-main {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+
   .paneles-seguimiento,
   .ubicacion-contenedor .tarjeta-prod {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  footer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 30px 25px;
+  }
+}
+
+/* 2. TELÉFONOS MÓVILES (Hasta 768px) */
+@media (max-width: 768px) {
+  .logo h1 {
+    font-size: 24px;
+  }
+
+  .logo img {
+    width: 45px;
+  }
+
+  .buscador {
+    height: 42px;
+  }
+
+  .buscador input {
+    font-size: 14px;
+    padding: 0 12px;
+  }
+
+  .carrito img {
+    width: 40px;
+    height: 40px;
+  }
+
+  nav ul li a {
+    font-size: 15px;
+  }
+
+  .texto-banner h2 {
+    font-size: 28px;
+  }
+
+  .texto-banner p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .btn-categoria,
+  .btn-ver-ofertas {
+    width: 100%;
+    max-width: 280px;
+    height: 55px;
+    font-size: 22px;
+  }
+
+  .tarjeta-oferta {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .info-producto {
+    width: 100%;
+  }
+
+  .info-producto ul {
+    list-style-position: inside;
+    margin-left: 0;
+  }
+
+  .imagen-producto {
+    height: auto;
+  }
+
+  .imagen-producto img,
+  .imagen-producto img.telefono {
+    width: 180px;
+    height: auto;
+  }
+
+  .form-contacto-container {
+    padding: 0 10px;
+  }
+
+  .form-contacto-banner h2 {
+    font-size: 1rem;
+  }
+
+  .form-contacto-group input,
+  .form-contacto-group textarea {
+    padding: 10px 15px;
+    font-size: 0.95rem;
+  }
+
+  .acerca-banner h2 {
+    font-size: 1.2rem;
+  }
+
+  .acerca-contenido p {
+    font-size: 0.95rem;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .redes {
+    align-items: center;
+  }
+
+  .iconos {
+    justify-content: center;
+  }
+}
+
+/* 3. TELÉFONOS PEQUEÑOS (Hasta 480px) */
+@media (max-width: 480px) {
+  main.catalogo-main {
+    grid-template-columns: 1fr;
+    padding: 12px;
+  }
+
+  .tarjeta-prod {
+    padding: 15px;
+  }
+
+  .titulo-prod {
+    font-size: 1.1rem;
+  }
+
+  .precio-prod {
+    font-size: 1.15rem;
+  }
+
+  .acerca-de-container,
+  .principal-seguimiento {
+    padding: 0 10px;
+    margin: 20px auto;
+  }
+
+  .acerca-banner h2 {
+    font-size: 1.1rem;
+  }
+
+  .acerca-contenido p {
+    font-size: 0.9rem;
+  }
+
+  .mapa-iframe {
+    height: 240px;
   }
 }

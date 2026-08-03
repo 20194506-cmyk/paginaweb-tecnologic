@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ubicación</title>
+    <title>Technologic Store - Seguimiento y Ubicación</title>
     <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
@@ -31,11 +31,12 @@
       </form>
 
       <div class="carrito">
-        <a href="compras.html">
+        <a href="compras.html" style="position: relative">
           <img
             src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
             alt="Carrito"
           />
+          <span id="contador-carrito">0</span>
         </a>
       </div>
     </header>
@@ -75,7 +76,10 @@
             </p>
 
             <form
-              action="#"
+              onsubmit="
+                event.preventDefault();
+                buscarPedido();
+              "
               method="post"
               class="formulario-rastreo"
               style="display: flex; flex-direction: column; gap: 15px"
@@ -103,13 +107,17 @@
                   border-radius: 25px;
                   outline: none;
                 "
-                placeholder="Ej. TECH-2026-001"
+                placeholder="Ej. TECH-2026-ABC1234"
+                autocomplete="off"
+                oninput="this.value = this.value.toUpperCase()"
               />
               <button type="submit" class="btn-carrito">Buscar pedido</button>
             </form>
+
+            <div id="resultadoPedido" style="margin-top: 25px"></div>
           </article>
 
-          <article class="tarjeta-prod panel-estado">
+          <article class="tarjeta-prod panel-estado" id="panelEstado">
             <h3
               class="titulo-prod"
               style="text-align: center; margin-bottom: 20px"
