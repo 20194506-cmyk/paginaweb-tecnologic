@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Technologic Store</title>
+    <title>Technologic Store - Inicio</title>
     <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
@@ -20,8 +20,13 @@
         <h1>TECHNOLOGIC STORE</h1>
       </div>
 
-      <form class="buscador">
-        <input type="search" placeholder="Celulares" />
+      <form class="buscador" id="form-busqueda">
+        <input
+          type="search"
+          id="entrada-busqueda"
+          placeholder="Buscar categorías..."
+          required
+        />
         <button type="submit">
           <img
             src="https://cdn-icons-png.flaticon.com/512/622/622669.png"
@@ -36,6 +41,7 @@
             src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
             alt="Carrito"
           />
+          <span id="contador-carrito" class="badge">0</span>
         </a>
       </div>
     </header>
@@ -45,7 +51,7 @@
         <li><a href="inicio.html">INICIO</a></li>
         <li><a href="ubicacion.html">UBICACIÓN</a></li>
         <li><a href="acerca-de.html">ACERCA DE</a></li>
-        <li><a href="contactanos.html">CONTACTANOS</a></li>
+        <li><a href="contactanos.html">CONTÁCTANOS</a></li>
         <li><a href="ofertas.html">OFERTAS</a></li>
       </ul>
     </nav>
@@ -57,7 +63,6 @@
             La Revolución Tecnológica de 2026.<br />
             Actualiza tu Setup Diario
           </h2>
-
           <p>
             Descubre las últimas innovaciones tecnológicas que están
             redefiniendo el año 2026. Desde inteligencia artificial avanzada
@@ -176,10 +181,10 @@
             <div class="info-producto">
               <h3>Audífonos RGB</h3>
               <ul>
-                <li>Sonido: HD nitido y envolvente</li>
-                <li>Iluminación: RGB con modos dinamicos</li>
-                <li>Micrófono: integrado</li>
-                <li>Almohadillas: suaves y cómodas</li>
+                <li>Sonido: HD nítido y envolvente</li>
+                <li>Iluminación: RGB con modos dinámicos</li>
+                <li>Micrófono: Integrado</li>
+                <li>Almohadillas: Suaves y cómodas</li>
               </ul>
             </div>
             <div class="imagen-producto">
@@ -243,6 +248,7 @@
         </div>
       </div>
     </footer>
+
     <script src="scritpt.js/script.js"></script>
   </body>
 </html>

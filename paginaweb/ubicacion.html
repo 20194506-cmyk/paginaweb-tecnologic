@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Technologic Store - Seguimiento y Ubicación</title>
+    <title>Technologic Store - Ubicación y Contacto</title>
     <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
@@ -52,265 +52,73 @@
     </nav>
 
     <main class="principal-seguimiento">
-      <section class="seguimiento-contenedor" id="seguimiento">
-        <div class="acerca-banner" style="margin-bottom: 35px">
-          <h2>Rastreo y Estado de Pedido</h2>
-        </div>
-
-        <div class="paneles-seguimiento">
-          <article class="tarjeta-prod panel-rastreo">
-            <div
-              class="icono-rastreo"
-              style="font-size: 2.5rem; text-align: center; margin-bottom: 10px"
-            >
-              📦
-            </div>
-            <h3 class="titulo-prod" style="text-align: center">
-              Rastrear mi pedido
-            </h3>
-            <p
-              class="specs-prod"
-              style="text-align: center; list-style: none; margin-bottom: 20px"
-            >
-              Ingresa el código recibido al realizar tu compra.
-            </p>
-
-            <form
-              onsubmit="
-                event.preventDefault();
-                buscarPedido();
-              "
-              method="post"
-              class="formulario-rastreo"
-              style="display: flex; flex-direction: column; gap: 15px"
-            >
-              <label
-                for="numeroPedido"
-                style="
-                  position: absolute;
-                  width: 1px;
-                  height: 1px;
-                  overflow: hidden;
-                  clip: rect(0, 0, 0, 0);
-                "
-                >Número de pedido</label
-              >
-              <input
-                type="text"
-                id="numeroPedido"
-                class="form-contacto-group input"
-                style="
-                  width: 100%;
-                  background-color: #ebebeb;
-                  border: 1px solid #333333;
-                  padding: 12px 20px;
-                  border-radius: 25px;
-                  outline: none;
-                "
-                placeholder="Ej. TECH-2026-ABC1234"
-                autocomplete="off"
-                oninput="this.value = this.value.toUpperCase()"
-              />
-              <button type="submit" class="btn-carrito">Buscar pedido</button>
-            </form>
-
-            <div id="resultadoPedido" style="margin-top: 25px"></div>
-          </article>
-
-          <article class="tarjeta-prod panel-estado" id="panelEstado">
-            <h3
-              class="titulo-prod"
-              style="text-align: center; margin-bottom: 20px"
-            >
-              Estado del envío
-            </h3>
-
-            <ol
-              class="linea-progreso-tech"
-              style="
-                list-style: none;
-                display: flex;
-                flex-direction: column;
-                gap: 15px;
-              "
-            >
-              <li
-                class="paso-tech completado"
-                style="
-                  display: flex;
-                  align-items: center;
-                  gap: 15px;
-                  font-weight: 600;
-                  color: #2e7d32;
-                "
-              >
-                <span
-                  class="punto-tech"
-                  style="
-                    width: 35px;
-                    height: 35px;
-                    background: #4caf50;
-                    color: #fff;
-                    border-radius: 50%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-weight: bold;
-                  "
-                  >✓</span
-                >
-                <p>Pedido recibido</p>
-              </li>
-
-              <li
-                class="paso-tech activo"
-                style="
-                  display: flex;
-                  align-items: center;
-                  gap: 15px;
-                  font-weight: 600;
-                  color: #1565c0;
-                "
-              >
-                <span
-                  class="punto-tech"
-                  style="
-                    width: 35px;
-                    height: 35px;
-                    background: #2196f3;
-                    color: #fff;
-                    border-radius: 50%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-weight: bold;
-                  "
-                  >2</span
-                >
-                <p>Preparando producto</p>
-              </li>
-
-              <li
-                class="paso-tech"
-                style="
-                  display: flex;
-                  align-items: center;
-                  gap: 15px;
-                  color: #666;
-                "
-              >
-                <span
-                  class="punto-tech"
-                  style="
-                    width: 35px;
-                    height: 35px;
-                    background: #ddd;
-                    color: #555;
-                    border-radius: 50%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-weight: bold;
-                  "
-                  >3</span
-                >
-                <p>En camino</p>
-              </li>
-
-              <li
-                class="paso-tech"
-                style="
-                  display: flex;
-                  align-items: center;
-                  gap: 15px;
-                  color: #666;
-                "
-              >
-                <span
-                  class="punto-tech"
-                  style="
-                    width: 35px;
-                    height: 35px;
-                    background: #ddd;
-                    color: #555;
-                    border-radius: 50%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-weight: bold;
-                  "
-                  >4</span
-                >
-                <p>Entregado</p>
-              </li>
-            </ol>
-          </article>
-        </div>
-      </section>
-
-      <section
-        class="ubicacion-contenedor"
-        id="ubicacion"
-        style="margin: 50px auto; max-width: 1550px; padding: 0 20px"
-      >
-        <div class="acerca-banner" style="margin-bottom: 30px">
+      <section class="ubicacion-contenedor" id="ubicacion">
+        <div class="acerca-banner">
           <h2>Nuestra Ubicación</h2>
         </div>
 
-        <div
-          class="tarjeta-prod"
-          style="
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            align-items: center;
-            padding: 30px;
-          "
-        >
+        <div class="tarjeta-prod tarjeta-ubicacion">
           <article class="info-tienda-tech">
-            <h3
-              class="titulo-prod"
-              style="font-size: 1.8rem; margin-bottom: 15px"
-            >
-              Technologic Store
-            </h3>
-            <address
-              class="direccion-tech"
-              style="
-                font-style: normal;
-                font-size: 1.1rem;
-                line-height: 2.2;
-                color: #111;
-              "
-            >
-              📍 Sonsonate, El Salvador
-              <br /><br />
-              📞 +503 7285-5317
-              <br /><br />
-              🕒 Lunes - Sábado <br />
-              8:00 AM - 6:00 PM
-            </address>
+            <h3 class="titulo-prod titulo-tienda">Technologic Store - Metrocentro Sonsonate</h3>
+            
+            <div class="bloque-info-ubicacion">
+              <p><strong>📍 Dirección:</strong> Centro Comercial Metrocentro Sonsonate, El Salvador</p>
+              <p><strong>📞 Teléfono:</strong> +503 7285-5317</p>
+              <p><strong>🕒 Horario:</strong><br />
+                 • Lunes a Sábado: 8:00 AM - 6:00 PM<br />
+                 • Domingo: Cerrado
+              </p>
+            </div>
           </article>
 
-          <figure class="mapa-tech" style="width: 100%">
+          <figure class="mapa-tech">
             <iframe
-              src="https://maps.google.com/maps?q=Sonsonate,+El+Salvador&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              src="https://maps.google.com/maps?q=Metrocentro+Sonsonate,+El+Salvador&t=&z=16&ie=UTF8&iwloc=&output=embed"
               class="mapa-iframe"
-              style="
-                width: 100%;
-                height: 320px;
-                border: 2px solid #222;
-                border-radius: 20px;
-              "
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
-            <figcaption
-              class="mapa-leyenda"
-              style="text-align: center; margin-top: 10px; font-weight: 500"
-            ></figcaption>
+            <figcaption class="mapa-leyenda">Visítanos en Metrocentro Sonsonate</figcaption>
           </figure>
+        </div>
+
+        <!-- SECCIÓN 1: ¿Por qué visitarnos? -->
+        <div class="beneficios-visita">
+          <div class="tarjeta-beneficio">
+            <i class="fa-solid fa-store icono-beneficio"></i>
+            <h4>Productos en Exhibición</h4>
+            <p>Prueba los equipos y accesorios antes de comprarlos.</p>
+          </div>
+          <div class="tarjeta-beneficio">
+            <i class="fa-solid fa-headset icono-beneficio"></i>
+            <h4>Asesoría Personalizada</h4>
+            <p>Te ayudamos a elegir el mejor equipo según tu presupuesto.</p>
+          </div>
+          <div class="tarjeta-beneficio">
+            <i class="fa-solid fa-shield-halved icono-beneficio"></i>
+            <h4>Garantía Directa</h4>
+            <p>Soporte, revisión y respuesta inmediata en nuestra tienda física.</p>
+          </div>
+        </div>
+
+        <!-- SECCIÓN 2: Métodos de Pago -->
+        <div class="metodos-pago-seccion">
+          <h3>Formas de Pago Aceptadas en Tienda</h3>
+          <div class="iconos-pagos">
+            <div class="pago-item">
+              <i class="fa-solid fa-money-bill-wave"></i>
+              <span>Efectivo</span>
+            </div>
+            <div class="pago-item">
+              <i class="fa-solid fa-credit-card"></i>
+              <span>Tarjetas de Crédito / Débito</span>
+            </div>
+            <div class="pago-item">
+              <i class="fa-solid fa-building-columns"></i>
+              <span>Transferencia Bancaria</span>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -361,6 +169,6 @@
         </div>
       </div>
     </footer>
-    <script src="js/script.js"></script>
+    <script src="scritpt.js/script.js"></script>
   </body>
 </html>
