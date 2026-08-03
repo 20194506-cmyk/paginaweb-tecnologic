@@ -1634,3 +1634,33 @@ document.addEventListener("DOMContentLoaded", () => {
     filtrarProductosPagina(terminoURL);
   }
 });
+
+function procesarPago() {
+  // 1. Obtener los productos del carrito desde el localStorage (o la variable que uses)
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  // 2. Validar si el carrito está vacío
+  if (carrito.length === 0) {
+    alert("⚠️ Tu carrito está vacío. Agrega productos antes de realizar una compra.");
+    return; // Detiene la ejecución aquí para que NO procese el pago
+  }
+
+  // 3. Si SÍ hay productos, ocultar la vista de carrito/pago
+  const seccionCarrito = document.getElementById("seccion-carrito-vista");
+  if (seccionCarrito) {
+    seccionCarrito.style.display = "none";
+  }
+
+  // 4. Mostrar la sección de confirmación exitosa
+  const seccionExito = document.getElementById("seccion-exito");
+  if (seccionExito) {
+    seccionExito.style.display = "block";
+  }
+
+  // 5. Vaciar el carrito y reiniciar el contador
+  localStorage.removeItem("carrito");
+  const contadorCarrito = document.getElementById("contador-carrito");
+  if (contadorCarrito) {
+    contadorCarrito.textContent = "0";
+  }
+}

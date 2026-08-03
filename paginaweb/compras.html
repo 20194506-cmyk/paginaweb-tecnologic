@@ -78,7 +78,7 @@
           style="width: 100%; margin-top: 20px"
         >
           <h3 class="titulo-prod" style="margin-bottom: 15px;">Información de Pago y Envío</h3>
-          <form id="form-pago" onsubmit="event.preventDefault(); procesarPagoYGenerarCodigo();" style="display: flex; flex-direction: column; gap: 12px;">
+          <form id="form-pago" onsubmit="event.preventDefault(); procesarPago();" style="display: flex; flex-direction: column; gap: 12px;">
             <div>
               <label style="display: block; font-size: 0.9rem; margin-bottom: 5px; font-weight: bold;">Nombre del titular:</label>
               <input type="text" placeholder="Ej. Juan Pérez" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
@@ -122,36 +122,27 @@
           class="tarjeta-prod panel-rastreo"
           style="width: 100%; margin-top: 20px; text-align: center"
         >
-          <p class="specs-prod">
-            ¡Tu pago ha sido validado correctamente! Tu pedido ya está en preparación.
+          <div style="font-size: 3.5rem; color: #2e7d32; margin-bottom: 15px;">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <p class="specs-prod" style="font-size: 1.1rem; list-style: none; margin-left: 0;">
+            ¡Tu pago ha sido validado correctamente!
           </p>
-          <p class="specs-prod" style="margin-top: 10px">
-            Tu código único de rastreo generado es:
-          </p>
-
-          <h1
-            id="codigo-generado"
-            class="titulo-prod"
-            style="color: #1565c0; font-size: 2.5rem; margin: 20px 0"
-          ></h1>
-
-          <p class="specs-prod" style="font-size: 0.95rem; margin-bottom: 25px">
-            Copia este código y dirígete a la sección de
-            <strong>Ubicación</strong> para rastrear el estado en tiempo real de
-            tu envío.
+          <p class="specs-prod" style="margin-top: 10px; list-style: none; margin-left: 0;">
+            Tu pedido ya está en proceso de preparación. Nos pondremos en contacto contigo para realizar la entrega a tu dirección.
           </p>
 
           <a
-            href="ubicacion.html"
+            href="inicio.html"
             class="btn-carrito"
             style="
               display: inline-block;
               text-decoration: none;
               max-width: 300px;
-              margin: 0 auto;
+              margin: 25px auto 0;
             "
           >
-            Ir a Ubicación y Rastrear
+            Volver a la Tienda
           </a>
         </div>
       </section>
