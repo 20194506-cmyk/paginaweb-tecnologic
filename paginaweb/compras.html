@@ -3,15 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Technologic Store</title>
-    <link rel="stylesheet" href="/paginaweb/css/style.css" />
+    <title>Carrito y Compras - Technologic Store</title>
+    <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
   </head>
   <body>
-    <!-- Encabezado del segundo código -->
     <header>
       <div class="logo">
         <img
@@ -22,7 +21,7 @@
       </div>
 
       <form class="buscador">
-        <input type="search" placeholder="Celulares" />
+        <input type="search" placeholder="Buscar productos..." />
         <button type="submit">
           <img
             src="https://cdn-icons-png.flaticon.com/512/622/622669.png"
@@ -37,11 +36,11 @@
             src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
             alt="Carrito"
           />
+          <span id="contador-carrito">0</span>
         </a>
       </div>
     </header>
 
-    <!-- Menú de navegación del segundo código -->
     <nav>
       <ul>
         <li><a href="inicio.html">INICIO</a></li>
@@ -51,161 +50,113 @@
         <li><a href="ofertas.html">OFERTAS</a></li>
       </ul>
     </nav>
-    <!-- Contenido principal -->
-    <main>
-      <section class="banner">
-        <div class="texto-banner">
-          <h2>
-            La Revolución Tecnológica de 2026.<br />
-            Actualiza tu Setup Diario
-          </h2>
 
-          <p>
-            Descubre las últimas innovaciones tecnológicas que están
-            redefiniendo el año 2026. Desde inteligencia artificial avanzada
-            hasta dispositivos hiperconectados, prepárate para elevar tu
-            productividad y entretenimiento al siguiente nivel. Tu setup ideal
-            te espera.
+    <main class="principal-seguimiento">
+      <section class="seguimiento-contenedor" id="seccion-carrito-vista">
+        <div class="acerca-banner">
+          <h2>Tu Carrito de Compras</h2>
+        </div>
+
+        <div
+          class="tarjeta-prod panel-rastreo"
+          style="width: 100%; margin-top: 20px"
+        >
+          <h3 class="titulo-prod">Productos Seleccionados</h3>
+
+          <ul id="lista-carrito-detallada" class="specs-prod"></ul>
+
+          <div
+            class="precio-prod"
+            style="margin: 20px 0; font-size: 1.3rem; font-weight: bold"
+          >
+            Total a Pagar: $<span id="total-pagar">0.00</span>
+          </div>
+        </div>
+
+        <div
+          class="tarjeta-prod panel-rastreo"
+          style="width: 100%; margin-top: 20px"
+        >
+          <h3 class="titulo-prod" style="margin-bottom: 15px;">Información de Pago y Envío</h3>
+          <form id="form-pago" onsubmit="event.preventDefault(); procesarPagoYGenerarCodigo();" style="display: flex; flex-direction: column; gap: 12px;">
+            <div>
+              <label style="display: block; font-size: 0.9rem; margin-bottom: 5px; font-weight: bold;">Nombre del titular:</label>
+              <input type="text" placeholder="Ej. Juan Pérez" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.9rem; margin-bottom: 5px; font-weight: bold;">Número de Tarjeta:</label>
+              <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="19" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <div style="flex: 1;">
+                <label style="display: block; font-size: 0.9rem; margin-bottom: 5px; font-weight: bold;">Expiración:</label>
+                <input type="text" placeholder="MM/AA" maxlength="5" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
+              </div>
+              <div style="flex: 1;">
+                <label style="display: block; font-size: 0.9rem; margin-bottom: 5px; font-weight: bold;">CVV:</label>
+                <input type="password" placeholder="123" maxlength="4" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
+              </div>
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.9rem; margin-bottom: 5px; font-weight: bold;">Dirección de Entrega:</label>
+              <input type="text" placeholder="Colonia, Calle, Casa N°" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
+            </div>
+
+            <button type="submit" class="btn-carrito" style="margin-top: 15px; width: 100%; cursor: pointer;">
+              <i class="fa-solid fa-credit-card icono-cart"></i> Pagar y Procesar Pedido
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section
+        id="seccion-exito"
+        style="display: none"
+        class="seguimiento-contenedor"
+      >
+        <div class="acerca-banner">
+          <h2>¡Pago Exitoso y Compra Realizada!</h2>
+        </div>
+
+        <div
+          class="tarjeta-prod panel-rastreo"
+          style="width: 100%; margin-top: 20px; text-align: center"
+        >
+          <p class="specs-prod">
+            ¡Tu pago ha sido validado correctamente! Tu pedido ya está en preparación.
           </p>
-        </div>
-      </section>
+          <p class="specs-prod" style="margin-top: 10px">
+            Tu código único de rastreo generado es:
+          </p>
 
-      <section class="categorias">
-        <div class="contenedor-categoria">
-          <article class="categoria">
-            <h2>CELULARES</h2>
+          <h1
+            id="codigo-generado"
+            class="titulo-prod"
+            style="color: #1565c0; font-size: 2.5rem; margin: 20px 0"
+          ></h1>
 
-            <div class="contenedor-imagen">
-              <img
-                src="https://cdn.tmobile.com/content/dam/t-mobile/en-p/cell-phones/apple/Apple-iPhone-14-Pro/Deep-Purple/Apple-iPhone-14-Pro-Deep-Purple-frontimage.png"
-                alt="Celulares"
-              />
-            </div>
-          </article>
+          <p class="specs-prod" style="font-size: 0.95rem; margin-bottom: 25px">
+            Copia este código y dirígete a la sección de
+            <strong>Ubicación</strong> para rastrear el estado en tiempo real de
+            tu envío.
+          </p>
 
-          <a href="celular.html" class="btn-categoria">ENTRAR</a>
-        </div>
-
-        <div class="contenedor-categoria">
-          <article class="categoria">
-            <h2>LAPTOPS</h2>
-
-            <div class="contenedor-imagen">
-              <img
-                src="https://mg-electro.tj/api/wwwroot/products/noutbuk-huawei-matebook-d16-2024-i5-8512gb-windows-11-home-gray_3_59ade728-4e86-48e2-bb36-c212e4c03755_compressed.png"
-                alt="Laptops"
-              />
-            </div>
-          </article>
-
-          <a href="computadora.html" class="btn-categoria">ENTRAR</a>
-        </div>
-
-        <div class="contenedor-categoria">
-          <article class="categoria">
-            <h2>AURICULARES</h2>
-
-            <div class="contenedor-imagen">
-              <img
-                src="https://www.logitechg.com/content/dam/gaming/en/products/pro-wireless/pro-wireless-headset-gallery-1.png"
-                alt="Auriculares"
-              />
-            </div>
-          </article>
-
-          <a href="audifono.html" class="btn-categoria">ENTRAR</a>
-        </div>
-      </section>
-
-      <section class="ofertas">
-        <h2>APROVECHA LAS MEJORES OFERTAS</h2>
-
-        <div class="grid-ofertas">
-          <article class="tarjeta-oferta">
-            <span class="descuento">15%</span>
-            <div class="info-producto">
-              <h3>Acer Nitro V</h3>
-              <ul>
-                <li>Intel Core i5</li>
-                <li>NVIDIA RTX 4050</li>
-                <li>16 GB RAM</li>
-                <li>512 GB SSD</li>
-                <li>Pantalla 15.6" 144Hz</li>
-              </ul>
-            </div>
-            <div class="imagen-producto">
-              <img
-                src="https://media-ik.croma.com/Croma%20Assets/Computers%20Peripherals/Laptop/Images/306449_0_gkthtk.png"
-                alt="Acer Nitro"
-              />
-            </div>
-          </article>
-
-          <article class="tarjeta-oferta">
-            <span class="descuento">40%</span>
-            <div class="info-producto">
-              <h3>iPhone 13 Pro</h3>
-              <ul>
-                <li>Chip A15 Bionic</li>
-                <li>Cámara Triple</li>
-                <li>128GB / 256GB</li>
-                <li>Pantalla Super Retina</li>
-              </ul>
-            </div>
-            <div class="imagen-producto">
-              <img
-                src="https://images-cdn.ubuy.co.in/687530186196e1fa6007db66-apple-iphone-13-pro-128-gb-gold.jpg"
-                alt="iPhone 13 Pro"
-              />
-            </div>
-          </article>
-
-          <article class="tarjeta-oferta">
-            <span class="descuento">50%</span>
-            <div class="info-producto">
-              <h3>iPhone 14 Plus</h3>
-              <ul>
-                <li>Chip A15 Bionic</li>
-                <li>Cámara Dual</li>
-                <li>128GB / 256GB</li>
-                <li>Batería de larga duración</li>
-              </ul>
-            </div>
-            <div class="imagen-producto">
-              <img
-                src="https://cdn.tmobile.com/content/dam/t-mobile/en-p/cell-phones/apple/Apple-iPhone-14-Plus/Purple/Apple-iPhone-14-Plus-Purple-frontimage.png"
-                alt="iPhone 14 Plus"
-              />
-            </div>
-          </article>
-
-          <article class="tarjeta-oferta">
-            <span class="descuento">30%</span>
-            <div class="info-producto">
-              <h3>Audífonos RGB</h3>
-              <ul>
-                <li>Sonido HD</li>
-                <li>Iluminación RGB</li>
-                <li>Micrófono integrado</li>
-                <li>Almohadillas cómodas</li>
-              </ul>
-            </div>
-            <div class="imagen-producto">
-              <img
-                src="https://static.vecteezy.com/system/resources/thumbnails/078/107/796/small/wireless-headphones-with-rgb-lighting-perfect-for-music-lovers-at-night-png.png"
-                alt="Audífonos RGB"
-              />
-            </div>
-          </article>
-        </div>
-
-        <div class="boton-ofertas">
-          <a href="ofertas.html" class="btn-ver-ofertas">VER OFERTAS</a>
+          <a
+            href="ubicacion.html"
+            class="btn-carrito"
+            style="
+              display: inline-block;
+              text-decoration: none;
+              max-width: 300px;
+              margin: 0 auto;
+            "
+          >
+            Ir a Ubicación y Rastrear
+          </a>
         </div>
       </section>
     </main>
 
-    <!-- Pie de página del segundo código -->
     <footer>
       <div class="copyright">
         <h3>© 2026 Technologic Store.</h3>
@@ -238,26 +189,21 @@
 
       <div class="redes">
         <h3>Síguenos</h3>
-
         <div class="iconos">
-          <a href="#" aria-label="TikTok">
-            <i class="fa-brands fa-tiktok"></i>
-          </a>
-
-          <a href="#" aria-label="Facebook">
-            <i class="fa-brands fa-facebook-f"></i>
-          </a>
-
-          <a href="#" aria-label="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-
-          <a href="#" aria-label="X">
-            <i class="fa-brands fa-x-twitter"></i>
-          </a>
+          <a href="#" aria-label="TikTok"
+            ><i class="fa-brands fa-tiktok"></i
+          ></a>
+          <a href="#" aria-label="Facebook"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+          <a href="#" aria-label="Instagram"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
         </div>
       </div>
     </footer>
+
     <script src="scritpt.js/script.js"></script>
   </body>
 </html>

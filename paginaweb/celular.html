@@ -8,7 +8,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <title>Celulares</title>
+    <title>Celulares - Technologic Store</title>
   </head>
   <body>
     <header>
@@ -31,11 +31,12 @@
       </form>
 
       <div class="carrito">
-        <a href="compras.html">
+        <a href="compras.html" id="btn-carrito-link">
           <img
             src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
             alt="Carrito"
           />
+          <span id="contador-carrito">0</span>
         </a>
       </div>
     </header>
@@ -49,6 +50,7 @@
         <li><a href="ofertas.html">OFERTAS</a></li>
       </ul>
     </nav>
+
     <main class="catalogo-main">
       <article class="tarjeta-prod">
         <div class="imagen-prod">
@@ -64,8 +66,11 @@
           <li>128 GB / 256 GB / 512 GB</li>
           <li>Hasta 22 horas de vídeo</li>
         </ul>
-        <p class="precio-prod">$800</p>
-        <button class="btn-carrito">
+        <p class="precio-prod">$800.00</p>
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('iPhone 16', 800)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
@@ -82,10 +87,13 @@
           <li>Chip A17 Pro</li>
           <li>Cámara Triple (48 MP)</li>
           <li>128 GB / 256 GB / 512 GB / 1 TB</li>
-          <li>Hasta 23/29 horas de vídeo.</li>
+          <li>Hasta 23/29 horas de vídeo</li>
         </ul>
-        <p class="precio-prod">$800</p>
-        <button class="btn-carrito">
+        <p class="precio-prod">$800.00</p>
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('iPhone 15 Pro', 800)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
@@ -101,11 +109,14 @@
         <ul class="specs-prod">
           <li>Chip A16 Bionic</li>
           <li>Cámara principal de 48 MP</li>
-          <li>Pantalla Super Retina XDR de 6.1 pulgadas</li>
+          <li>Pantalla Super Retina XDR de 6.1"</li>
           <li>Dynamic Island y Always-On</li>
         </ul>
-        <p class="precio-prod">$635</p>
-        <button class="btn-carrito">
+        <p class="precio-prod">$635.00</p>
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('iPhone 14 Pro', 635)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
@@ -124,8 +135,11 @@
           <li>128 GB / 256 GB / 512 GB / 1 TB</li>
           <li>Hasta 22 horas de vídeo</li>
         </ul>
-        <p class="precio-prod">$380</p>
-        <button class="btn-carrito">
+        <p class="precio-prod">$380.00</p>
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('iPhone 13 Pro', 380)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
@@ -144,8 +158,11 @@
           <li>128 / 256 / 512 GB</li>
           <li>Hasta 20/26 horas de vídeo</li>
         </ul>
-        <p class="precio-prod">$800</p>
-        <button class="btn-carrito">
+        <p class="precio-prod">$800.00</p>
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('iPhone 14 Plus', 800)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
@@ -164,8 +181,11 @@
           <li>128 GB / 256 GB / 512 GB</li>
           <li>Hasta 17/20 horas de vídeo</li>
         </ul>
-        <p class="precio-prod">$250</p>
-        <button class="btn-carrito">
+        <p class="precio-prod">$250.00</p>
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('iPhone 12 Pro', 250)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
@@ -184,8 +204,11 @@
           <li>256 GB / 512 GB / 1 TB</li>
           <li>5,000 mAh (Carga rápida de 45W)</li>
         </ul>
-        <p class="precio-prod">$1,000</p>
-        <button class="btn-carrito">
+        <p class="precio-prod">$1,000.00</p>
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('Samsung Galaxy S24 Ultra', 1000)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
@@ -204,8 +227,11 @@
           <li>256 GB / 512 GB / 1 TB</li>
           <li>5,000 mAh (Carga rápida de 45W)</li>
         </ul>
-        <p class="precio-prod">$850</p>
-        <button class="btn-carrito">
+        <p class="precio-prod">$850.00</p>
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('Samsung Galaxy S23 Ultra', 850)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
@@ -224,8 +250,11 @@
           <li>128 GB / 256 GB / 512 GB</li>
           <li>5,000 mAh (Carga rápida de 25W)</li>
         </ul>
-        <p class="precio-prod">$450</p>
-        <button class="btn-carrito">
+        <p class="precio-prod">$450.00</p>
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('Samsung Galaxy S21 Ultra', 450)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
@@ -244,8 +273,11 @@
           <li>128 GB / 256 GB / 512 GB / 1 TB</li>
           <li>5,000 mAh (Carga rápida de 45W)</li>
         </ul>
-        <p class="precio-prod">$650</p>
-        <button class="btn-carrito">
+        <p class="precio-prod">$650.00</p>
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('Samsung Galaxy S22 Ultra', 650)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
@@ -264,8 +296,11 @@
           <li>256 GB</li>
           <li>5,000 mAh (Carga rápida de 45W)</li>
         </ul>
-        <p class="precio-prod">$375</p>
-        <button class="btn-carrito">
+        <p class="precio-prod">$375.00</p>
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('Infinix GT 20 Pro', 375)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
@@ -284,8 +319,11 @@
           <li>128 GB / 256 GB</li>
           <li>5,000 mAh (Carga rápida de 33W)</li>
         </ul>
-        <p class="precio-prod">$195</p>
-        <button class="btn-carrito">
+        <p class="precio-prod">$195.00</p>
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('Infinix Hot 50 Pro', 195)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
@@ -323,26 +361,21 @@
 
       <div class="redes">
         <h3>Síguenos</h3>
-
         <div class="iconos">
-          <a href="#" aria-label="TikTok">
-            <i class="fa-brands fa-tiktok"></i>
-          </a>
-
-          <a href="#" aria-label="Facebook">
-            <i class="fa-brands fa-facebook-f"></i>
-          </a>
-
-          <a href="#" aria-label="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-
-          <a href="#" aria-label="X">
-            <i class="fa-brands fa-x-twitter"></i>
-          </a>
+          <a href="#" aria-label="TikTok"
+            ><i class="fa-brands fa-tiktok"></i
+          ></a>
+          <a href="#" aria-label="Facebook"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+          <a href="#" aria-label="Instagram"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
         </div>
       </div>
     </footer>
+
     <script src="scritpt.js/script.js"></script>
   </body>
 </html>

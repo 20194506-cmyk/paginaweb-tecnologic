@@ -8,7 +8,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <title>Audífonos</title>
+    <title>Audífonos - Technologic Store</title>
   </head>
   <body>
     <header>
@@ -21,7 +21,7 @@
       </div>
 
       <form class="buscador">
-        <input type="search" placeholder="Celulares" />
+        <input type="search" placeholder="Buscar audífonos..." />
         <button type="submit">
           <img
             src="https://cdn-icons-png.flaticon.com/512/622/622669.png"
@@ -31,11 +31,12 @@
       </form>
 
       <div class="carrito">
-        <a href="compras.html">
+        <a href="compras.html" id="btn-carrito-link">
           <img
             src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
             alt="Carrito"
           />
+          <span id="contador-carrito">0</span>
         </a>
       </div>
     </header>
@@ -49,12 +50,12 @@
         <li><a href="ofertas.html">OFERTAS</a></li>
       </ul>
     </nav>
+
     <main class="catalogo-main">
-      <!-- 1. -->
       <article class="tarjeta-prod">
         <div class="imagen-prod">
           <img
-            src="https://i.postimg.cc/phLvJFs6/image-37.png"
+            src="https://axnsport.com/wp-content/uploads/2024/12/03.JBL_Tune-520BT_Product-Image_Back_Black.png"
             alt="JBL Inalámbricos"
           />
         </div>
@@ -66,17 +67,19 @@
           <li>Batería de larga duración</li>
         </ul>
         <p class="precio-prod">$40.00</p>
-        <button class="btn-carrito">
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('JBL Inalámbricos', 40)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
 
-      <!-- 2. -->
       <article class="tarjeta-prod">
         <div class="imagen-prod">
           <img
             src="https://www.jbl.com.br/dw/image/v2/BFND_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw4049e447/JBL_TUNE_125BT_Product%20Image_Hero_Black.png?sw=535&sh=535"
-            alt="JBL (Modelo) JBL Tune 525BT"
+            alt="JBL Tune 525BT"
           />
         </div>
         <h3 class="titulo-prod">JBL (Modelo) JBL Tune 525BT</h3>
@@ -87,12 +90,14 @@
           <li>Batería duradera</li>
         </ul>
         <p class="precio-prod">$39.00</p>
-        <button class="btn-carrito">
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('JBL Tune 525BT', 39)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
 
-      <!-- 3. -->
       <article class="tarjeta-prod">
         <div class="imagen-prod">
           <img
@@ -108,16 +113,18 @@
           <li>Conexión Bluetooth 5.3</li>
         </ul>
         <p class="precio-prod">$79.00</p>
-        <button class="btn-carrito">
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('Audífonos Inalámbricos Pro', 79)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
 
-      <!-- 4. -->
       <article class="tarjeta-prod">
         <div class="imagen-prod">
           <img
-            src="https://r.bolder.run/4184/original/1027965-h390-frontview-gallery-black_1.webp"
+            src="https://www.logitechg.com/content/dam/gaming/en/products/g733/gallery/g733-black-gallery-1.png"
             alt="Logitech"
           />
         </div>
@@ -129,12 +136,14 @@
           <li>Incluye adaptador USB</li>
         </ul>
         <p class="precio-prod">$44.99</p>
-        <button class="btn-carrito">
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('Logitech', 44.99)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
 
-      <!-- 5. -->
       <article class="tarjeta-prod">
         <div class="imagen-prod">
           <img
@@ -150,12 +159,14 @@
           <li>Almohadillas muy cómodas</li>
         </ul>
         <p class="precio-prod">$41.50</p>
-        <button class="btn-carrito">
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('Audífonos RGB', 41.5)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
 
-      <!-- 6. -->
       <article class="tarjeta-prod">
         <div class="imagen-prod">
           <img
@@ -171,12 +182,11 @@
           <li>Micrófono flexible</li>
         </ul>
         <p class="precio-prod">$54.99</p>
-        <button class="btn-carrito">
+        <button class="btn-carrito" onclick="agregarAlCarrito('Xtech', 54.99)">
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
 
-      <!-- 7. -->
       <article class="tarjeta-prod">
         <div class="imagen-prod">
           <img
@@ -192,12 +202,14 @@
           <li>Estuche de carga moderno</li>
         </ul>
         <p class="precio-prod">$66.99</p>
-        <button class="btn-carrito">
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('EDIFIER', 66.99)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
 
-      <!-- 8. -->
       <article class="tarjeta-prod">
         <div class="imagen-prod">
           <img
@@ -209,16 +221,18 @@
         <ul class="specs-prod">
           <li>Diseño de oído abierto</li>
           <li>Bluetooth 5.3</li>
-          <li>Múltiples de color</li>
+          <li>Múltiples colores</li>
           <li>Hasta 18h de batería</li>
         </ul>
         <p class="precio-prod">$59.00</p>
-        <button class="btn-carrito">
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('Knowledge Zenith', 59)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
 
-      <!-- 9. -->
       <article class="tarjeta-prod">
         <div class="imagen-prod">
           <img
@@ -234,12 +248,11 @@
           <li>Batería de larga duración</li>
         </ul>
         <p class="precio-prod">$42.00</p>
-        <button class="btn-carrito">
+        <button class="btn-carrito" onclick="agregarAlCarrito('Festa Pro', 42)">
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
 
-      <!-- 10. -->
       <article class="tarjeta-prod">
         <div class="imagen-prod">
           <img
@@ -255,12 +268,14 @@
           <li>Hasta 20h de batería</li>
         </ul>
         <p class="precio-prod">$49.99</p>
-        <button class="btn-carrito">
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('Audio-Technica', 49.99)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
 
-      <!-- 11. -->
       <article class="tarjeta-prod">
         <div class="imagen-prod">
           <img
@@ -276,12 +291,14 @@
           <li>Compatibilidad con PC y consola</li>
         </ul>
         <p class="precio-prod">$39.00</p>
-        <button class="btn-carrito">
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('Logitech G', 39)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
 
-      <!-- 12. -->
       <article class="tarjeta-prod">
         <div class="imagen-prod">
           <img
@@ -297,7 +314,7 @@
           <li>Diseño ligero y cómodo</li>
         </ul>
         <p class="precio-prod">$64.99</p>
-        <button class="btn-carrito">
+        <button class="btn-carrito" onclick="agregarAlCarrito('EIM', 64.99)">
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
@@ -335,26 +352,23 @@
 
       <div class="redes">
         <h3>Síguenos</h3>
-
         <div class="iconos">
           <a href="#" aria-label="TikTok">
             <i class="fa-brands fa-tiktok"></i>
           </a>
-
           <a href="#" aria-label="Facebook">
             <i class="fa-brands fa-facebook-f"></i>
           </a>
-
           <a href="#" aria-label="Instagram">
             <i class="fa-brands fa-instagram"></i>
           </a>
-
           <a href="#" aria-label="X">
             <i class="fa-brands fa-x-twitter"></i>
           </a>
         </div>
       </div>
     </footer>
+
     <script src="scritpt.js/script.js"></script>
   </body>
 </html>

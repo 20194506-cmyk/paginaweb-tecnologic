@@ -8,7 +8,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <title>Laptops</title>
+    <title>Laptops - Technologic Store</title>
   </head>
   <body>
     <header>
@@ -21,7 +21,7 @@
       </div>
 
       <form class="buscador">
-        <input type="search" placeholder="Celulares" />
+        <input type="search" placeholder="Celulares o Laptops..." />
         <button type="submit">
           <img
             src="https://cdn-icons-png.flaticon.com/512/622/622669.png"
@@ -31,11 +31,12 @@
       </form>
 
       <div class="carrito">
-        <a href="compras.html">
+        <a href="compras.html" id="btn-carrito-link">
           <img
             src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
             alt="Carrito"
           />
+          <span id="contador-carrito">0</span>
         </a>
       </div>
     </header>
@@ -51,7 +52,6 @@
     </nav>
 
     <main class="catalogo-main">
-      <!-- 1. Huawei MateBook D16 -->
       <article class="tarjeta-prod">
         <div class="imagen-prod">
           <img
@@ -61,18 +61,20 @@
         </div>
         <h3 class="titulo-prod">Huawei MateBook D16</h3>
         <ul class="specs-prod">
-          <li>Chip Apple de bajo consumo</li>
+          <li>Chip de bajo consumo</li>
           <li>8 GB / 256 GB</li>
-          <li>Retina de 13 pulgadas</li>
+          <li>Pantalla de 16 pulgadas</li>
           <li>Batería con duración hasta 15 horas</li>
         </ul>
-        <p class="precio-prod">$700</p>
-        <button class="btn-carrito">
+        <p class="precio-prod">$700.00</p>
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('Huawei MateBook D16', 700)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
 
-      <!-- 2. ASUS Zenbook A14 -->
       <article class="tarjeta-prod">
         <div class="imagen-prod">
           <img
@@ -87,13 +89,15 @@
           <li>OLED de 14 pulgadas (colores súper vivos)</li>
           <li>Muy delgada, ligera y con batería duradera</li>
         </ul>
-        <p class="precio-prod">$1,000</p>
-        <button class="btn-carrito">
+        <p class="precio-prod">$1,000.00</p>
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('ASUS Zenbook A14', 1000)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
 
-      <!-- 3. Lenovo IdeaPad Slim 3 -->
       <article class="tarjeta-prod">
         <div class="imagen-prod">
           <img
@@ -104,17 +108,19 @@
         <h3 class="titulo-prod">Lenovo IdeaPad Slim 3</h3>
         <ul class="specs-prod">
           <li>Intel Core i5 o Ryzen 5</li>
-          <li>8 GB o 16 GB / 512 GB.</li>
+          <li>16 GB / 512 GB</li>
           <li>Full HD de 15.6 pulgadas</li>
           <li>Económica y confiable para tareas</li>
         </ul>
-        <p class="precio-prod">$1,339</p>
-        <button class="btn-carrito">
+        <p class="precio-prod">$1,339.00</p>
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('Lenovo IdeaPad Slim 3', 1339)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
 
-      <!-- 4. Dell Inspiron 14 -->
       <article class="tarjeta-prod">
         <div class="imagen-prod">
           <img
@@ -129,13 +135,15 @@
           <li>14 pulgadas (antirreflejante)</li>
           <li>Chasis muy robusto</li>
         </ul>
-        <p class="precio-prod">$1,200</p>
-        <button class="btn-carrito">
+        <p class="precio-prod">$1,200.00</p>
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('Dell Inspiron 14', 1200)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
 
-      <!-- 5. HP Pavilion 14 -->
       <article class="tarjeta-prod">
         <div class="imagen-prod">
           <img
@@ -150,13 +158,15 @@
           <li>Full HD de 14 pulgadas</li>
           <li>Teclado cómodo y carga rápida</li>
         </ul>
-        <p class="precio-prod">$1,370</p>
-        <button class="btn-carrito">
+        <p class="precio-prod">$1,370.00</p>
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('HP Pavilion 14', 1370)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
 
-      <!-- 6. Lenovo IdeaPad Flex 3 -->
       <article class="tarjeta-prod">
         <div class="imagen-prod">
           <img
@@ -167,17 +177,19 @@
         <h3 class="titulo-prod">Lenovo IdeaPad Flex 3</h3>
         <ul class="specs-prod">
           <li>Intel N-Series o AMD básico</li>
-          <li>8 GB / 128 GB o 256 GB</li>
+          <li>8 GB / 256 GB</li>
           <li>Táctil de 14 pulgadas</li>
           <li>Versatilidad total</li>
         </ul>
-        <p class="precio-prod">$320</p>
-        <button class="btn-carrito">
+        <p class="precio-prod">$320.00</p>
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('Lenovo IdeaPad Flex 3', 320)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
 
-      <!-- 7. ASUS Vivobook Go 15 -->
       <article class="tarjeta-prod">
         <div class="imagen-prod">
           <img
@@ -192,13 +204,15 @@
           <li>15.6 pulgadas</li>
           <li>Barato y muy eficiente</li>
         </ul>
-        <p class="precio-prod">$585</p>
-        <button class="btn-carrito">
+        <p class="precio-prod">$585.00</p>
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('ASUS Vivobook Go 15', 585)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
 
-      <!-- 8. Acer Nitro V -->
       <article class="tarjeta-prod">
         <div class="imagen-prod">
           <img
@@ -212,15 +226,16 @@
           <li>NVIDIA RTX 4050</li>
           <li>16 GB / 512 GB</li>
           <li>15.6 pulgadas a 144Hz</li>
-          <li>Rendimiento de gama alta</li>
         </ul>
-        <p class="precio-prod">$1,500</p>
-        <button class="btn-carrito">
+        <p class="precio-prod">$1,500.00</p>
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('Acer Nitro V', 1500)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
 
-      <!-- 9. Lenovo Legion LOQ -->
       <article class="tarjeta-prod">
         <div class="imagen-prod">
           <img
@@ -233,16 +248,17 @@
           <li>Intel Core i5 o Ryzen 5</li>
           <li>NVIDIA RTX 4050</li>
           <li>16 GB / 512 GB</li>
-          <li>15.6 pulgadas</li>
           <li>Refrigeración excelente</li>
         </ul>
-        <p class="precio-prod">$900</p>
-        <button class="btn-carrito">
+        <p class="precio-prod">$900.00</p>
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('Lenovo Legion LOQ', 900)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
 
-      <!-- 10. ASUS TUF Gaming A15 -->
       <article class="tarjeta-prod">
         <div class="imagen-prod">
           <img
@@ -256,15 +272,16 @@
           <li>NVIDIA RTX 4060</li>
           <li>16 GB / 1 TB</li>
           <li>15.6 pulgadas Full HD</li>
-          <li>Fácil de actualizar</li>
         </ul>
-        <p class="precio-prod">$1,400</p>
-        <button class="btn-carrito">
+        <p class="precio-prod">$1,400.00</p>
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('ASUS TUF Gaming A15', 1400)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
 
-      <!-- 11. HP Victus 16 -->
       <article class="tarjeta-prod">
         <div class="imagen-prod">
           <img
@@ -275,18 +292,19 @@
         <h3 class="titulo-prod">HP Victus 16</h3>
         <ul class="specs-prod">
           <li>AMD Ryzen 7 o Intel Core i7</li>
-          <li>NVIDIA RTX 4050 / 4060</li>
+          <li>NVIDIA RTX 4050</li>
           <li>16 GB / 512 GB</li>
-          <li>16.1 pulgadas</li>
-          <li>Pantalla espaciosa ideal para edición</li>
+          <li>Pantalla de 16.1 pulgadas</li>
         </ul>
-        <p class="precio-prod">$859</p>
-        <button class="btn-carrito">
+        <p class="precio-prod">$859.00</p>
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('HP Victus 16', 859)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
 
-      <!-- 12. Acer Swift Go 14 -->
       <article class="tarjeta-prod">
         <div class="imagen-prod">
           <img
@@ -299,10 +317,13 @@
           <li>Intel Core Ultra o Snapdragon</li>
           <li>16 GB / 512 GB</li>
           <li>OLED de 14 pulgadas</li>
-          <li>Incluye funciones de IA</li>
+          <li>Funciones avanzadas de IA</li>
         </ul>
-        <p class="precio-prod">$700</p>
-        <button class="btn-carrito">
+        <p class="precio-prod">$700.00</p>
+        <button
+          class="btn-carrito"
+          onclick="agregarAlCarrito('Acer Swift Go 14', 700)"
+        >
           <span class="icono-cart">🛒</span> Agregar al carrito
         </button>
       </article>
@@ -340,26 +361,21 @@
 
       <div class="redes">
         <h3>Síguenos</h3>
-
         <div class="iconos">
-          <a href="#" aria-label="TikTok">
-            <i class="fa-brands fa-tiktok"></i>
-          </a>
-
-          <a href="#" aria-label="Facebook">
-            <i class="fa-brands fa-facebook-f"></i>
-          </a>
-
-          <a href="#" aria-label="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-
-          <a href="#" aria-label="X">
-            <i class="fa-brands fa-x-twitter"></i>
-          </a>
+          <a href="#" aria-label="TikTok"
+            ><i class="fa-brands fa-tiktok"></i
+          ></a>
+          <a href="#" aria-label="Facebook"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+          <a href="#" aria-label="Instagram"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
         </div>
       </div>
     </footer>
+
     <script src="scritpt.js/script.js"></script>
   </body>
 </html>
