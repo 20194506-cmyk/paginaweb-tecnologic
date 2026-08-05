@@ -994,6 +994,30 @@ main.catalogo-main {
   margin-bottom: 2px;
 }
 
+.imagen-prod .img-prod1 {
+  width: 100%;
+  height: 80%;
+  object-fit: contain;
+  transform: scale(1.05);
+  transition: 0.4s ease;
+}
+
+.imagen-prod .img-prod2 {
+  width: 100%;
+  height: 95%;
+  object-fit: contain;
+  transform: scale(1.05);
+  transition: 0.4s ease;
+}
+
+.imagen-prod .img-prod3 {
+  width: 100%;
+  height: 80%;
+  object-fit: contain;
+  transform: scale(1.05);
+  transition: 0.4s ease;
+}
+
 /* =========================================
     SEGUIMIENTO Y UBICACIÓN
 ========================================= */
@@ -1150,231 +1174,292 @@ main.catalogo-main {
   }
 }
 
-/*=========================================
-    RESPONSIVE GLOBAL (TABLETS Y MÓVILES)
-=========================================*/
+/* =========================================
+   MEDIA QUERIES - RESPONSIVE DESIGN
+========================================= */
 
-/* 1. PANTALLAS MEDIANAS Y TABLETS (Hasta 1024px) */
-@media (max-width: 1024px) {
+/* Evita que cualquier elemento sobresalga horizontalmente */
+html,
+body {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* 1. TABLETS Y PANTALLAS MEDIANAS (Hasta 1024px) */
+@media screen and (max-width: 1024px) {
+  /* Header & Navegación */
   header {
-    height: auto;
-    padding: 20px;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
+    height: auto !important;
+    padding: 15px 20px !important;
+    flex-wrap: wrap !important;
+    gap: 15px !important;
   }
 
   .logo {
-    justify-content: center;
+    justify-content: flex-start !important;
+  }
+
+  .logo h1 {
+    font-size: 24px !important;
   }
 
   .buscador {
-    margin: 10px 0;
-    width: 100%;
-    max-width: 500px;
+    order: 3 !important;
+    margin: 10px auto 0 !important;
+    width: 100% !important;
+    max-width: 600px !important;
   }
 
   nav {
-    height: auto;
-    padding: 10px 0;
+    height: auto !important;
+    padding: 12px 10px !important;
   }
 
   nav ul {
-    flex-wrap: wrap;
-    gap: 15px;
-    padding: 5px 15px;
+    flex-wrap: wrap !important;
+    gap: 15px 20px !important;
+    justify-content: center !important;
   }
 
+  /* Banner */
   .banner {
-    padding: 30px 25px;
-    min-height: auto;
+    padding: 35px 20px !important;
+    min-height: auto !important;
   }
 
   .texto-banner h2 {
-    font-size: 38px;
-    text-align: center;
+    font-size: 36px !important;
+    text-align: center !important;
   }
 
   .texto-banner p {
-    font-size: 18px;
-    text-align: left;
+    font-size: 18px !important;
+    text-align: center !important;
   }
 
+  /* Categorías */
   .categorias {
-    flex-wrap: wrap;
-    gap: 30px;
-    padding: 40px 20px;
+    flex-wrap: wrap !important;
+    gap: 30px !important;
+    padding: 40px 20px !important;
   }
 
   .categoria {
-    width: 100%;
-    max-width: 350px;
+    width: 100% !important;
+    max-width: 340px !important;
+    height: auto !important;
+    padding-bottom: 25px !important;
+  }
+
+  /* Catálogos & Ofertas */
+  main.catalogo-main {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+    padding: 20px !important;
   }
 
   .grid-ofertas {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 
-  main.catalogo-main {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 20px;
-  }
-
+  /* Ubicación & Seguimiento */
   .paneles-seguimiento,
+  .ubicacion-contenedor .tarjeta-ubicacion,
   .ubicacion-contenedor .tarjeta-prod {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 25px !important;
   }
 
+  .beneficios-visita {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Footer */
   footer {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    padding: 30px 25px;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 30px !important;
+    padding: 35px 20px !important;
   }
 }
 
 /* 2. TELÉFONOS MÓVILES (Hasta 768px) */
-@media (max-width: 768px) {
-  .logo h1 {
-    font-size: 24px;
+@media screen and (max-width: 768px) {
+  /* Header & Navegación */
+  header {
+    padding: 12px 15px !important;
   }
 
   .logo img {
-    width: 45px;
+    width: 45px !important;
+  }
+
+  .logo h1 {
+    font-size: 20px !important;
   }
 
   .buscador {
-    height: 42px;
+    height: 42px !important;
   }
 
   .buscador input {
-    font-size: 14px;
-    padding: 0 12px;
+    font-size: 14px !important;
+    padding: 0 12px !important;
   }
 
   .carrito img {
-    width: 40px;
-    height: 40px;
+    width: 40px !important;
+    height: 40px !important;
   }
 
   nav ul li a {
-    font-size: 15px;
+    font-size: 15px !important;
   }
 
+  /* Banners */
   .texto-banner h2 {
-    font-size: 28px;
+    font-size: 26px !important;
   }
 
   .texto-banner p {
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 15px !important;
+    line-height: 1.6 !important;
   }
 
   .btn-categoria,
   .btn-ver-ofertas {
-    width: 100%;
-    max-width: 280px;
-    height: 55px;
-    font-size: 22px;
+    width: 90% !important;
+    max-width: 300px !important;
+    height: 52px !important;
+    font-size: 22px !important;
   }
 
+  /* Ofertas */
   .tarjeta-oferta {
-    flex-direction: column;
-    text-align: center;
-    gap: 15px;
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 15px !important;
   }
 
   .info-producto {
-    width: 100%;
+    width: 100% !important;
   }
 
   .info-producto ul {
-    list-style-position: inside;
-    margin-left: 0;
+    list-style-position: inside !important;
+    margin-left: 0 !important;
   }
 
-  .imagen-producto {
-    height: auto;
+  /* Contenedores Principales */
+  .form-contacto-container,
+  .acerca-de-container,
+  .principal-seguimiento,
+  .ubicacion-contenedor {
+    width: 100% !important;
+    padding: 0 15px !important;
+    margin: 20px auto !important;
+    box-sizing: border-box !important;
   }
 
-  .imagen-producto img,
-  .imagen-producto img.telefono {
-    width: 180px;
-    height: auto;
+  /* =========================================
+     SOLUCIÓN ESPECÍFICA PARA LA UBICACIÓN
+  ========================================= */
+  .ubicacion-contenedor .tarjeta-ubicacion,
+  .ubicacion-contenedor .tarjeta-prod {
+    display: flex !important;
+    flex-direction: column !important; /* Pasa texto y mapa en vertical */
+    width: 100% !important;
+    padding: 20px 15px !important;
+    gap: 20px !important;
+    box-sizing: border-box !important;
   }
 
-  .form-contacto-container {
-    padding: 0 10px;
+  .info-tienda-tech,
+  .bloque-info-ubicacion,
+  .mapa-tech {
+    width: 100% !important; /* Asegura que ocupen el 100% del ancho */
   }
 
-  .form-contacto-banner h2 {
-    font-size: 1rem;
+  .info-tienda-tech .titulo-tienda {
+    font-size: 1.4rem !important;
+    text-align: center !important;
   }
 
-  .form-contacto-group input,
-  .form-contacto-group textarea {
-    padding: 10px 15px;
-    font-size: 0.95rem;
+  .bloque-info-ubicacion p,
+  .direccion-tech {
+    font-size: 0.95rem !important;
+    word-break: break-word !important;
   }
 
-  .acerca-banner h2 {
-    font-size: 1.2rem;
+  .mapa-iframe {
+    width: 100% !important;
+    height: 250px !important; /* Altura perfecta para celular */
   }
 
-  .acerca-contenido p {
-    font-size: 0.95rem;
+  /* Beneficios (Tarjetas inferiores) */
+  .beneficios-visita {
+    display: flex !important;
+    flex-direction: column !important; /* Tarjetas de beneficios en vertical */
+    width: 100% !important;
+    gap: 15px !important;
+    margin-top: 20px !important;
   }
 
+  .tarjeta-beneficio {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Métodos de Pago */
+  .metodos-pago-seccion {
+    padding: 20px 12px !important;
+  }
+
+  .iconos-pagos {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .pago-item {
+    padding: 12px 8px !important;
+  }
+
+  .pago-item i {
+    font-size: 1.8rem !important;
+  }
+
+  .pago-item span {
+    font-size: 0.85rem !important;
+  }
+
+  /* Footer */
   footer {
-    grid-template-columns: 1fr;
-    text-align: center;
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+    gap: 25px !important;
+    padding: 30px 15px !important;
   }
 
   .redes {
-    align-items: center;
+    align-items: center !important;
   }
 
   .iconos {
-    justify-content: center;
+    justify-content: center !important;
   }
 }
 
 /* 3. TELÉFONOS PEQUEÑOS (Hasta 480px) */
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   main.catalogo-main {
-    grid-template-columns: 1fr;
-    padding: 12px;
-  }
-
-  .tarjeta-prod {
-    padding: 15px;
-  }
-
-  .titulo-prod {
-    font-size: 1.1rem;
-  }
-
-  .precio-prod {
-    font-size: 1.15rem;
-  }
-
-  .acerca-de-container,
-  .principal-seguimiento {
-    padding: 0 10px;
-    margin: 20px auto;
-  }
-
-  .acerca-banner h2 {
-    font-size: 1.1rem;
-  }
-
-  .acerca-contenido p {
-    font-size: 0.9rem;
+    grid-template-columns: 1fr !important;
+    padding: 10px !important;
+    gap: 15px !important;
   }
 
   .mapa-iframe {
-    height: 240px;
+    height: 200px !important;
   }
 }
 /* =========================================
@@ -1497,7 +1582,209 @@ main.catalogo-main {
 }
 
 /* =========================================
-             MÉTODOS DE PAGO
+   UBICACIÓN Y DETALLES (Mover arriba de las Media Queries)
+========================================= */
+
+.principal-seguimiento {
+  width: 100%;
+  max-width: 1600px;
+  margin: 40px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.principal-seguimiento .tarjeta-prod {
+  background-color: #f5f9ff;
+  border: 2px solid #222222;
+  border-radius: 25px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.ubicacion-contenedor {
+  margin: 10px auto 50px;
+  max-width: 1600px;
+  padding: 0 20px;
+}
+.ubicacion-contenedor .acerca-banner {
+  margin-bottom: 30px;
+}
+.ubicacion-contenedor .tarjeta-ubicacion {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+  padding: 30px;
+}
+.info-tienda-tech .titulo-tienda {
+  font-size: 1.7rem;
+  margin-bottom: 18px;
+  color: #111;
+}
+.bloque-info-ubicacion {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.bloque-info-ubicacion p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #222;
+}
+.bloque-info-ubicacion strong {
+  color: #000;
+}
+.mapa-tech {
+  width: 100%;
+}
+.mapa-iframe {
+  width: 100%;
+  height: 350px;
+  border: 2px solid #222;
+  border-radius: 20px;
+}
+.mapa-leyenda {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 500;
+  color: #333;
+}
+.beneficios-visita {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+.tarjeta-beneficio {
+  background-color: #f5f9ff;
+  border: 2px solid #222;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.tarjeta-beneficio:hover {
+  transform: translateY(-5px);
+}
+.icono-beneficio {
+  font-size: 2.2rem;
+  color: #527dae;
+  margin-bottom: 12px;
+}
+.tarjeta-beneficio h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.tarjeta-beneficio p {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* =========================================
+   UBICACIÓN Y DETALLES (Mover arriba de las Media Queries)
+========================================= */
+
+.principal-seguimiento {
+  width: 100%;
+  max-width: 1600px;
+  margin: 40px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.principal-seguimiento .tarjeta-prod {
+  background-color: #f5f9ff;
+  border: 2px solid #222222;
+  border-radius: 25px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.ubicacion-contenedor {
+  margin: 10px auto 50px;
+  max-width: 1600px;
+  padding: 0 20px;
+}
+.ubicacion-contenedor .acerca-banner {
+  margin-bottom: 30px;
+}
+.ubicacion-contenedor .tarjeta-ubicacion {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+  padding: 30px;
+}
+.info-tienda-tech .titulo-tienda {
+  font-size: 1.7rem;
+  margin-bottom: 18px;
+  color: #111;
+}
+.bloque-info-ubicacion {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.bloque-info-ubicacion p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #222;
+}
+.bloque-info-ubicacion strong {
+  color: #000;
+}
+.mapa-tech {
+  width: 100%;
+}
+.mapa-iframe {
+  width: 100%;
+  height: 350px;
+  border: 2px solid #222;
+  border-radius: 20px;
+}
+.mapa-leyenda {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 500;
+  color: #333;
+}
+.beneficios-visita {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+.tarjeta-beneficio {
+  background-color: #f5f9ff;
+  border: 2px solid #222;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.tarjeta-beneficio:hover {
+  transform: translateY(-5px);
+}
+.icono-beneficio {
+  font-size: 2.2rem;
+  color: #527dae;
+  margin-bottom: 12px;
+}
+.tarjeta-beneficio h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.tarjeta-beneficio p {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* =========================================
+   MÉTODOS DE PAGO Y NOTIFICACIONES
 ========================================= */
 
 .metodos-pago-seccion {
@@ -1509,14 +1796,12 @@ main.catalogo-main {
   text-align: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
-
 .metodos-pago-seccion h3 {
   font-size: 1.6rem;
   margin-bottom: 25px;
   font-weight: 700;
   color: #111;
 }
-
 .iconos-pagos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -1524,7 +1809,6 @@ main.catalogo-main {
   justify-content: center;
   align-items: center;
 }
-
 .pago-item {
   display: flex;
   flex-direction: column;
@@ -1538,53 +1822,37 @@ main.catalogo-main {
   transition: all 0.3s ease;
   cursor: pointer;
 }
-
 .pago-item:hover {
   transform: translateY(-6px);
   border-color: #527dae;
   box-shadow: 0 8px 18px rgba(82, 125, 174, 0.2);
 }
-
 .pago-item i {
   font-size: 2.4rem;
   color: #527dae;
   transition: color 0.3s ease;
 }
-
 .pago-item:hover i {
   color: #2c5282;
 }
-
 .pago-item span {
   font-size: 0.95rem;
   font-weight: 600;
   color: #222;
 }
-
-/*==========================
-      NOTIFICACIONES
-==========================*/
-
 #contenedorNotificaciones {
   pointer-events: none;
 }
-
 #contenedorNotificaciones div {
   min-width: 280px;
   max-width: 350px;
 }
-
-/*==============================
-        BUSCADOR
-==============================*/
-
 #mensajeBusqueda {
   font-size: 20px;
   font-weight: 600;
   color: #444;
   animation: aparecer 0.3s;
 }
-
 @keyframes aparecer {
   from {
     opacity: 0;
@@ -1593,5 +1861,236 @@ main.catalogo-main {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* =========================================
+   MEDIA QUERIES - RESPONSIVE DESIGN (¡SIEMPRE AL FINAL!)
+========================================= */
+
+html,
+body {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* 1. TABLETS Y PANTALLAS MEDIANAS (Hasta 1024px) */
+@media screen and (max-width: 1024px) {
+  header {
+    height: auto !important;
+    padding: 15px 20px !important;
+    flex-wrap: wrap !important;
+    gap: 15px !important;
+  }
+  .logo {
+    justify-content: flex-start !important;
+  }
+  .logo h1 {
+    font-size: 24px !important;
+  }
+  .buscador {
+    order: 3 !important;
+    margin: 10px auto 0 !important;
+    width: 100% !important;
+    max-width: 600px !important;
+  }
+  nav {
+    height: auto !important;
+    padding: 12px 10px !important;
+  }
+  nav ul {
+    flex-wrap: wrap !important;
+    gap: 15px 20px !important;
+    justify-content: center !important;
+  }
+  .banner {
+    padding: 35px 20px !important;
+    min-height: auto !important;
+  }
+  .texto-banner h2 {
+    font-size: 36px !important;
+    text-align: center !important;
+  }
+  .texto-banner p {
+    font-size: 18px !important;
+    text-align: center !important;
+  }
+  .categorias {
+    flex-wrap: wrap !important;
+    gap: 30px !important;
+    padding: 40px 20px !important;
+  }
+  .categoria {
+    width: 100% !important;
+    max-width: 340px !important;
+    height: auto !important;
+    padding-bottom: 25px !important;
+  }
+  main.catalogo-main {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+    padding: 20px !important;
+  }
+  .grid-ofertas {
+    grid-template-columns: repeat(2, 1fr) !important;
+  } /* Mejor 2 columnas para tablet */
+  .paneles-seguimiento,
+  .ubicacion-contenedor .tarjeta-ubicacion,
+  .ubicacion-contenedor .tarjeta-prod {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 25px !important;
+  }
+  .beneficios-visita {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  footer {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 30px !important;
+    padding: 35px 20px !important;
+  }
+}
+
+/* 2. TELÉFONOS MÓVILES (Hasta 768px) */
+@media screen and (max-width: 768px) {
+  header {
+    padding: 12px 15px !important;
+  }
+  .logo img {
+    width: 45px !important;
+  }
+  .logo h1 {
+    font-size: 20px !important;
+  }
+  .buscador {
+    height: 42px !important;
+  }
+  .buscador input {
+    font-size: 14px !important;
+    padding: 0 12px !important;
+  }
+  .carrito img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  nav ul li a {
+    font-size: 15px !important;
+  }
+  .texto-banner h2 {
+    font-size: 26px !important;
+  }
+  .texto-banner p {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+  }
+  .btn-categoria,
+  .btn-ver-ofertas {
+    width: 90% !important;
+    max-width: 300px !important;
+    height: 52px !important;
+    font-size: 22px !important;
+  }
+  .grid-ofertas {
+    grid-template-columns: 1fr !important;
+  } /* 1 sola columna para celular */
+  .tarjeta-oferta {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 15px !important;
+  }
+  .info-producto {
+    width: 100% !important;
+  }
+  .info-producto ul {
+    list-style-position: inside !important;
+    margin-left: 0 !important;
+  }
+  .form-contacto-container,
+  .acerca-de-container,
+  .principal-seguimiento,
+  .ubicacion-contenedor {
+    width: 100% !important;
+    padding: 0 15px !important;
+    margin: 20px auto !important;
+    box-sizing: border-box !important;
+  }
+  .ubicacion-contenedor .tarjeta-ubicacion,
+  .ubicacion-contenedor .tarjeta-prod {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    padding: 20px 15px !important;
+    gap: 20px !important;
+    box-sizing: border-box !important;
+  }
+  .info-tienda-tech,
+  .bloque-info-ubicacion,
+  .mapa-tech {
+    width: 100% !important;
+  }
+  .info-tienda-tech .titulo-tienda {
+    font-size: 1.4rem !important;
+    text-align: center !important;
+  }
+  .bloque-info-ubicacion p,
+  .direccion-tech {
+    font-size: 0.95rem !important;
+    word-break: break-word !important;
+  }
+  .mapa-iframe {
+    width: 100% !important;
+    height: 250px !important;
+  }
+  .beneficios-visita {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 15px !important;
+    margin-top: 20px !important;
+  }
+  .tarjeta-beneficio {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .metodos-pago-seccion {
+    padding: 20px 12px !important;
+  }
+  .iconos-pagos {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+  .pago-item {
+    padding: 12px 8px !important;
+  }
+  .pago-item i {
+    font-size: 1.8rem !important;
+  }
+  .pago-item span {
+    font-size: 0.85rem !important;
+  }
+  footer {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+    gap: 25px !important;
+    padding: 30px 15px !important;
+  }
+  .redes {
+    align-items: center !important;
+  }
+  .iconos {
+    justify-content: center !important;
+  }
+}
+
+/* 3. TELÉFONOS PEQUEÑOS (Hasta 480px) */
+@media screen and (max-width: 480px) {
+  main.catalogo-main {
+    grid-template-columns: 1fr !important;
+    padding: 10px !important;
+    gap: 15px !important;
+  }
+  .mapa-iframe {
+    height: 200px !important;
   }
 }
